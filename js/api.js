@@ -76,7 +76,7 @@ async function handleSignup(){
             password1.value = null;
         }
         else{
-            window.location.replace("signin.html")
+            window.location.replace("api.html")
         }
         
     }
@@ -89,8 +89,8 @@ async function handleSignup(){
 
 // 로그인
 async function handleSignin(){
-    var username = document.getElementById("username").value
-    var password = document.getElementById("password").value
+    var username = document.getElementById("in_username").value
+    var password = document.getElementById("in_password").value
 
     const response = await fetch(`${main_url}/users/signin/`, {
         headers: {
@@ -103,6 +103,9 @@ async function handleSignin(){
         })
     })
     if (response.status == 400){
+        alert('입력한 정보가 정확하지 않습니다. 다시 시도해주세요.')
+        window.location.reload()
+
         response_json = await response.json()
         let addHtml = response_json.message;
         document.getElementById('signin_message').innerHTML = addHtml;

@@ -1,1 +1,5 @@
-// main js 입니다.
+// 로그아웃
+function handleLogout(){
+    localStorage.clear()
+    window.location.replace("api.html")
+}
