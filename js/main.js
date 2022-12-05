@@ -7,7 +7,8 @@ function handleLogout(){
 const main_url = "http://127.0.0.1:8000"
 
 async function create_worry(){
-    const mbti = document.getElementById('input_mbti').value
+    const mbti = document.getElementById('input_mbti')
+    const mbti_txt = mbti.options[mbti.selectedIndex].text
     const category = document.getElementById('input_category')
     const category_txt = category.options[category.selectedIndex].text
     const worry = document.getElementById('input_worry').value
@@ -21,7 +22,7 @@ async function create_worry(){
         },
         method : 'POST',
         body : JSON.stringify({
-            "mbti": mbti,
+            "mbti": mbti_txt,
             "category" : category_txt,
             "content":worry
         })

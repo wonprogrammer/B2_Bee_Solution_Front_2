@@ -28,12 +28,12 @@ window.onload = () => { //solution_id 얻기 위해 두번 fetch
         }
 
         const soso = document.getElementById('soso_btn') // 글쎄요 버튼 = 2
-        best.onclick = function(){
+        soso.onclick = function(){
             rating(data.id, 2)
         }
 
         const bad = document.getElementById('bad_btn') //안좋아요 버튼 = 0
-        best.onclick = function(){
+        bad.onclick = function(){
             rating(data.id, 0)
         }
      })
@@ -50,8 +50,8 @@ async function rating(solution_id, value){
             'content-type': 'application/json'
         },
         method : 'POST',
-        body : {
+        body : JSON.stringify({
             "rating" : value
-        }
+        })
     })
 }
