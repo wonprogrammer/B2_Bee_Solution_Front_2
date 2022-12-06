@@ -79,10 +79,9 @@
         display: flex;
     }
 }
-
 button {
     margin: 5px;
-  }
+}
 .custom-btn {
     width: 130px;
     height: 40px;
@@ -110,8 +109,8 @@ button {
     border: none;
     background: rgb(255,27,0);
   background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
-  }
-  .btn-5:hover {
+}
+.btn-5:hover {
     color: #f0094a;
     background: transparent;
      box-shadow:none;
@@ -126,7 +125,7 @@ button {
     width:0;
     background: #f0094a;
     box-shadow:
-     -1px -1px 5px 0px #fff,
+    -1px -1px 5px 0px #fff,
      7px 7px 20px 0px #0003,
      4px 4px 5px 0px #0002;
     transition:400ms ease all;
@@ -145,7 +144,11 @@ button {
 
 
 
-/* main css */
+  /* main css */
+body{
+      background:#263343;
+  }
+
 .wrap{
     display: flex;
     flex-direction: row;
