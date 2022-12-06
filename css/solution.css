@@ -1,0 +1,14 @@
+.solution_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: blanchedalmond;
+    width: 50%;
+    height: 800px;
+}
+
+.solution_box > div {
+    margin: 30px 0px;
+}
