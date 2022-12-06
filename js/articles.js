@@ -28,7 +28,7 @@ window.onload = async function load_articles(){
             <div class="card-body">
                 <h5 class="card-title">${element.category} / ${element.mbti}</h5>
                 <p class="card-text">${element.content}</p>
-                <a href="article_detail.html" onclicke = 'save_article_id(${element.id})'class="btn btn-outline-secondary">게시글 보기</a>
+                <a href="javascript:save_article_id(${element.id});" class="btn btn-outline-secondary">게시글 보기</a>
             </div>
         </div>
         `    
@@ -38,6 +38,7 @@ window.onload = async function load_articles(){
 
 function save_article_id(article_id){
     localStorage.setItem('article_id',article_id)
+    window.location.replace('article_detail.html')
 }
 
 function save_category_id(category_id){
