@@ -6,6 +6,10 @@
 
     height: 750px;
 }
+.dropdown{
+    margin-top: 20px;
+    margin-right: 20px;
+}
 
 .left_box{  
     background-color: blanchedalmond;

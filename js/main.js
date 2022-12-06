@@ -29,3 +29,8 @@ async function create_worry(){
     })
     window.location.replace('solution.html')
 }
+
+function save_category_id(category_id){
+    localStorage.setItem('category_id',category_id)
+    window.location.replace('articles.html')
+}
