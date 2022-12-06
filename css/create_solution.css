@@ -145,8 +145,7 @@ button {
   }
 
 
-
-/* main css */
+/* creste_solution css */
 .wrap{
     display: flex;
     flex-direction: row;
@@ -162,52 +161,4 @@ button {
     text-align: center;
     width: 35%;
     height: 75%;
-}
-
-h2{
-    margin-bottom: 20px;
-}
-
-.left_box > div{
-    margin: 20px 0px;
-}
-
-.left_box> button{
-    margin-top: 20px;
-    font-size: 20px;
-}
-
-.right_box{
-    margin-top: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 20px;
-}
-
-.mbti_box{
-    display: inline-block;
-    text-align: center;
-    width: 380px;
-    margin-bottom: 20px;
-}
-
-.mbti_box > button {
-    margin-top: 10px;
-    font-size: 25px;
-    width: 80px;
-    
-}
-
-.category_box{
-    display: inline-block;
-    text-align: center;
-    width: 480px;
-    margin-bottom: 20px;
-}
-
-.category_box > button {
-    margin-top: 10px;
-    font-size: 23px;
-    width: 110px;
 }
