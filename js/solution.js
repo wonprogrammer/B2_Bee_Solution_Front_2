@@ -1,3 +1,10 @@
+// 로그아웃
+function handleLogout(){
+    localStorage.clear()
+    window.location.replace("api.html")
+}
+
+
 const main_url = "http://127.0.0.1:8000"
 
 

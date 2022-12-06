@@ -145,22 +145,4 @@ button {
   }
 
 
-  
-/* articles css */
-.wrap{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-}
-
-.category_box{
-    margin-top: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.dropdown{
-    margin-left: 20px;
-}
+/* profile css */
