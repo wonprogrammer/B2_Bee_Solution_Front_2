@@ -4,6 +4,7 @@ function handleLogout(){
     window.location.replace("api.html")
 }
 
+
 const main_url = "http://127.0.0.1:8000"
 
 async function create_worry(){
@@ -34,3 +35,4 @@ function save_category_id(category_id){
     localStorage.setItem('category_id',category_id)
     window.location.replace('articles.html')
 }
+
