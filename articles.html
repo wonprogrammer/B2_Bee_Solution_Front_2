@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/articles.css">
+    <title>article</title>
+</head>
+<body>
+  <div class="basetool">
+    <nav class="navbar">
+        <a href="main.html">Beesolution</a>
+        <ul class="navbar__menu">
+            <button class="custom-btn btn-5" onclick="location.href='create_solution.html'"><span>soultion</span></button>
+            <button class="custom-btn btn-5" onclick="location.href='articles.html'"><span>category</span></button>
+            <button class="custom-btn btn-5" onclick="location.href='main.html'"><span>고민 작성</span></button>
+            <button class="custom-btn btn-5" onclick="location.href='profile.html'"><span>Profile</span></button>
+            <button class="custom-btn btn-5" onclick="handleLogout()"><span>Logout</span></button>
+        </ul>
+    </nav>
+</div>
+
+    <div class = category_box>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            mbti 게시글 보기
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" onclick = save_category_id(9)>ENFP</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(10)>ENFJ</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(11)>ENTP</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(12)>ENTJ</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(13)>ESFP</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(14)>ESFJ</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(15)>ESTP</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(16)>ESTJ</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(17)>INFP</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(18)>INFJ</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(19)>INTP</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(20)>INTJ</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(21)>ISFP</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(22)>ISFJ</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(23)>ISTP</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(24)>ISTJ</a></li>
+
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            카테고리 별 게시글 보기
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" onclick = save_category_id(1)>음식</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(2)>취미</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(3)>취업</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(4)>일상</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(5)>투자</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(6)>연애</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(7)>스포츠</a></li>
+          <li><a class="dropdown-item" onclick = save_category_id(8)>연예</a></li>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-outline-secondary" onclick="window.location.replace('main.html')">main</button>
+    </div>
+    <div class="wrap">
+        <div id="articles"></div>
+    </div>
+    <script src="/js/articles.js"></script>
+</body>
+</html>

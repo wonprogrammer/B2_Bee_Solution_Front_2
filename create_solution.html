@@ -17,10 +17,10 @@
         <nav class="navbar">
             <a href="main.html">Beesolution</a>
             <ul class="navbar__menu">
-                <button class="custom-btn btn-5"><span>soultion</span></button>
-                <button class="custom-btn btn-5"><span>category</span></button>
-                <button class="custom-btn btn-5"><span>게시글 작성</span></button>
-                <button class="custom-btn btn-5"><span>Profile</span></button>
+                <button class="custom-btn btn-5" onclick="location.href='create_solution.html'"><span>soultion</span></button>
+                <button class="custom-btn btn-5" onclick="location.href='articles.html'"><span>category</span></button>
+                <button class="custom-btn btn-5" onclick="location.href='main.html'"><span>고민 작성</span></button>
+                <button class="custom-btn btn-5" onclick="location.href='profile.html'"><span>Profile</span></button>
                 <button class="custom-btn btn-5" onclick="handleLogout()"><span>Logout</span></button>
             </ul>
         </nav>
@@ -30,24 +30,35 @@
         <div class = 'left_box'>
             <form>
                 <h4> 명언 </h4>
-                <div class="form-floating mb-3">
+                <div class="form-floating">
                     <input type="text" class="form-control" id="wise" placeholder="wise saying" >
                     <label for="wise">Wise</label>
+                    <p> 🚨현재 콤마(,)는 줄바꿈을 위한 기호로 사용되고 있습니다. 주의 해주세요.🚨 </p>
                 </div>
                 <h4> 이름 </h4>
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="name" id="name"></textarea>
+                    <input type="text" class="form-control" id="name" placeholder="wise name" >
                     <label for="name">Name</label>
                 </div>
                 <h4> category </h4>
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="category" id="category"></textarea>
+                    <input type="text" class="form-control" id="category" placeholder="category" >
                     <label for="category">Category</label>
                 </div>
-                <button class="btn btn-outline-dark" type="button" onclick=create_article()>저장</button>
+                <button class="btn btn-outline-dark" type="button" onclick=create_solution()>저장</button>
             </form>
+        </div>
 
-            
+        <div class = 'right_box'>
+            <form>
+                <div class='input-group'>
+                    <label class="input-group-text" for="images">사진 업로드</label>
+                    <input class="form-control" type="file" id="file" accept="image/*">
+                </div>
+                <div class="preview-Img-box">
+                    <img class="preview-Img" id="previewImg" alt="이미지" width = "500px" height='350px'/>
+                </div>
+            </form>
         </div>
     </div>
 
