@@ -9,7 +9,7 @@ const main_url = "http://127.0.0.1:8000"
 
 window.onload = async function load_articles(){
     category_id = localStorage.getItem('category_id')
-    const response = await fetch(`${main_url}/article/category/${category_id}/`,{
+    const response = await fetch(`${main_url}/article/${category_id}/`,{
         headers : {
             "Authorization": "Bearer " + localStorage.getItem("access"),
             "content-type": "application/json"
