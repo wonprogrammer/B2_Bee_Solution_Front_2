@@ -46,12 +46,14 @@ async function rating(solution_id, value){
     
     const response = await fetch(`${main_url}/article/worry/${solution_id}/`,{
         headers : {
-            'Authorization' : 'Bearer' + localStorage.getItem('access'),
+            'Authorization' : 'Bearer ' + localStorage.getItem('access'),
             'content-type': 'application/json'
         },
         method : 'POST',
         body : JSON.stringify({
             "rating" : value
         })
+
     })
+    window.location.replace('main.html')
 }
