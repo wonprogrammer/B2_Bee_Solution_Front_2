@@ -169,6 +169,10 @@ button {
 .article_btns{
     margin-top: 20px;
 }
+.modal-body > h4 {
+    margin: 15px 0px;
+    text-align: center;
+}
 
 .comment_box{
     display: flex;
