@@ -67,6 +67,17 @@ async function userProfileUpload(){
     )
 }
 
+function save_article_id(article_id){
+    localStorage.setItem('article_id',article_id)
+    window.location.replace("article_detail.html")
+}
+
+function save_category_id(category_id){
+    localStorage.setItem('category_id',category_id)
+    window.location.reload()
+}
+
+
 // 로그인한 user 글만 가져오기
 async function load_articles(){
     category_id = localStorage.getItem('category_id')
@@ -102,14 +113,4 @@ async function load_articles(){
         `    
     })
     articles_box.innerHTML = output
-}
-
-function save_article_id(article_id){
-    localStorage.setItem('article_id',article_id)
-    window.location.replace('article_detail.html')
-}
-
-function save_category_id(category_id){
-    localStorage.setItem('category_id',category_id)
-    window.location.replace('articles.html')
 }

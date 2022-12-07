@@ -228,3 +228,32 @@ button {
 .wrap{
     margin-top: 300px;
 }
+
+.mbti_box{
+    display: inline-block;
+    text-align: center;
+    width: 380px;
+    margin-bottom: 20px;
+}
+
+.mbti_box > button {
+    margin-top: 10px;
+    font-size: 25px;
+    width: 80px;
+    
+}
+
+
+.category_box{
+    margin-top: 150px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category_box > button {
+    margin-top: 10px;
+    font-size: 23px;
+    width: 110px;
+}
