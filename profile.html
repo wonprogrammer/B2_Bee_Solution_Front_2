@@ -25,6 +25,32 @@
             </ul>
         </nav>
     </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="profile" style="background: #BDBDBD;">
+                    <img class="user_profile_img" id="user_profile_img">
+                </div>
+                <h3 class="username" id="user_name"></h3>
+                <div class="profile_btn">
+                    <button type="button" class="btn btn-outline-dark" onclick="location.href='profile_detail.html'">프로필 수정하기</button>
+                </div>
+                <div class="articles_btn">
+                    <button type="button" class="btn btn-outline-dark" onclick="location.href='main.html'">고민 공유하기</button>
+                </div>
+                <div class="articles_btn">
+                    <button type="button" class="btn btn-outline-dark" onclick="myarticleslist()">내가 작성한 글 보기</button>
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    <div class="myarticles" id="myarticles">
+        <div id = myarticles_list></div>
+    </div>
+
+    <script src="/js/profile.js"></script>
     
 </body>
 </html>

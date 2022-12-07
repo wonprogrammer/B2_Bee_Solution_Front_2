@@ -9,8 +9,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <title>create solution</title>
-    <link rel="stylesheet" type="text/css" href="../css/create_solution.css">
+    <title>Profile 수정</title>
+    <link rel="stylesheet" type="text/css" href="/css/profile_detail.css">
 </head>
 <body>
     <div class="basetool">
@@ -26,39 +26,32 @@
         </nav>
     </div>
 
-    <div class="wrap">
-        <div class = 'left_box'>
-            <form>
-                <h4> 명언 </h4>
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="wise" placeholder="wise saying" >
-                    <label for="wise">Wise saying</label>
-                    <p><small> 🚨현재 슬래시(/)는 줄바꿈을 위한 기호로 사용되고 있습니다. 문장이 길어질 시 슬래시(/)를 이용해 적절히 끊어주세요.🚨 </small></p>
-                </div>
-                <h4> 닉네임 </h4>
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="nickname" placeholder="nickname" >
-                    <label for="nickname">Nickname</label>
-                </div>
-                <button class="btn btn-outline-dark" type="button" onclick="handleUploadimg()">저장</button>
-            </form>
+    <div class="profile_detail_container">
+        <div class="row">
+            <div class="profile" >
+                <img class="user_profile_img" id="user_profile_img">
+            </div>
+            <h3 class="username" id="user_name"></h3>
+
         </div>
 
-        <div class = 'right_box'>
-            <form>
-                <div class='input-group'>
-                    <label class="input-group-text" for="images">사진 업로드</label>
-                    <input class="form-control" type="file" id="file" accept="image/*">
+        <div class="row">
+            <div class="profile_detail_btn">
+                <h5>프로필 이미지 업로드</h5>
+                <input class="form-control" type="file" id="file" accept="image/*">
+                <div class="profile_detail_finish">
+                    <button type="button" class="btn btn-outline-dark" id="profilesendButton" onclick="userProfileUpload()"> 프로필 이미지 저장하기 </button>
                 </div>
-                <div class="preview-Img-box">
-                    <img class="preview-Img" id="previewImg" alt="" width = "500px" height='350px'/>
-                    <div class="preview-Img-text">이미지 미리보기</div>
+            <hr class="line">
+                <div class="profile_detail_finish">
+                    <button type="button" class="btn btn-outline-dark" onclick="location.href='profile.html'"> 프로필 페이지로 돌아가기</button>
                 </div>
-            </form>
+            </div>
+
         </div>
     </div>
 
+    <script src="/js/profile.js"></script>
     
-    <script src="../js/create_solution.js"></script>
 </body>
 </html>
