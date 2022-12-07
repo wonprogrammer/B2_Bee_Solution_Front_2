@@ -54,6 +54,28 @@ function article_delete() {
     window.location.replace('articles.html')
 }
 
+function article_edit() {
+    const mbti = document.getElementById('input_mbti')
+    const mbti_txt = mbti.options[mbti.selectedIndex].text
+    const category = document.getElementById('input_category')
+    const category_txt = category.options[category.selectedIndex].text
+    const worry = document.getElementById('input_worry').value
+
+    const response = fetch(`${main_url}/article/${article_id}/detail/`, {
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem('access'),
+            "content-type": "application/json"
+        },
+        method: "PUT",
+        body: JSON.stringify({
+            "mbti":mbti_txt,
+            "category":category_txt,
+            "content":worry
+        })
+    })
+    window.location.reload()
+}
+
 async function comment_create(){
     const inputItem = document.getElementById('comment_input').value
     const response = await fetch(`${main_url}/article/${article_id}/comment/`,{
