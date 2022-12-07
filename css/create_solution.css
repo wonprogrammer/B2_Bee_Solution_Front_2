@@ -180,4 +180,20 @@ button {
     height: 350px;
     width: 500px;
     background: lightgray;
+    position: relative;
 }
+
+.preview-Img {
+    border: 1px solid lightgray;
+    opacity: 0.5;
+}
+
+.preview-Img-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: gray;
+  }
+  
