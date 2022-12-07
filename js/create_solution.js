@@ -18,3 +18,27 @@ const handleFiles = (e) => {
     }
 }
 fileInput.addEventListener("change", handleFiles)
+
+
+async function handleUploadimg(){
+    const img = document.querySelector('#file')
+    const wise = document.getElementById('wise').value
+    const nickname = document.getElementById('nickname').value
+
+    console.log(img, wise, nickname)
+
+    const formdata = new FormData()
+    formdata.append('solution_image', img.files[0])
+    formdata.append('wise', wise)
+    formdata.append('nickname', nickname)
+
+    const response = await fetch(`${main_url}/article/1/solution/`, {
+        headers: { 
+            'Authorization': 'Bearer '+ localStorage.getItem('access')
+        },
+        method: 'POST',
+        body: formdata
+    }
+    )
+    // .then(window.location.replace('.html'))
+}

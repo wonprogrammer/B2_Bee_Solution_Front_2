@@ -14,7 +14,7 @@ const username = personObj['username']
 
 window.onload = () => {
     loaduseruploadimg();
-    // load_articles();
+    load_articles();
 }
 
 
