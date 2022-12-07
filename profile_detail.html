@@ -9,8 +9,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <title>Profile</title>
-    <link rel="stylesheet" type="text/css" href="/css/profile.css">
+    <title>Profile 수정</title>
+    <link rel="stylesheet" type="text/css" href="/css/profile_detail.css">
 </head>
 <body>
     <div class="basetool">
@@ -26,28 +26,29 @@
         </nav>
     </div>
 
-    <div class="container">
+    <div class="profile_detail_container">
         <div class="row">
-            <div class="col">
-                <div class="profile" style="background: #BDBDBD;">
-                    <img class="user_profile_img" id="user_profile_img">
+            <div class="profile" >
+                <img class="user_profile_img" id="user_profile_img">
+            </div>
+            <h3 class="username" id="user_name"></h3>
+
+        </div>
+
+        <div class="row">
+            <div class="profile_detail_btn">
+                <h5>프로필 이미지 업로드</h5>
+                <input class="form-control" type="file" id="file" accept="image/*">
+                <div class="profile_detail_finish">
+                    <button type="button" class="btn btn-outline-dark" id="profilesendButton" onclick="userProfileUpload()"> 프로필 이미지 저장하기 </button>
                 </div>
-                <h3 class="username" id="user_name"></h3>
-                <div class="profile_btn">
-                    <button type="button" class="btn btn-outline-dark" onclick="location.href='profile_detail.html'">프로필 수정하기</button>
-                </div>
-                <div class="articles_btn">
-                    <button type="button" class="btn btn-outline-dark" onclick="location.href='main.html'">고민 공유하기</button>
-                </div>
-                <div class="articles_btn">
-                    <button type="button" class="btn btn-outline-dark" onclick="myarticleslist()">내가 작성한 글 보기</button>
+            <hr class="line">
+                <div class="profile_detail_finish">
+                    <button type="button" class="btn btn-outline-dark" onclick="location.href='profile.html'"> 프로필 페이지로 돌아가기</button>
                 </div>
             </div>
-        </div>      
-    </div>
 
-    <div class="myarticles" id="myarticles">
-        <div id = myarticles_list></div>
+        </div>
     </div>
 
     <script src="/js/profile.js"></script>
