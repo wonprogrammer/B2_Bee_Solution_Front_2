@@ -28,6 +28,18 @@ window.onload = async function load_detail() {
         const article_del = document.getElementById('article_del_btn')
         article_del.style.visibility = 'hidden'
     }
+
+    const comment_list = document.getElementById('comment_list')
+    let output = ''
+    
+    response_json.comment_set.reverse().forEach(element => {
+        output += `
+        <input class="form-control" type="text" value="${element.content}           -${element.article_user}" readonly>
+        <button type="button" class="btn btn-outline-dark" id="edit_comment_btn" onclick="location.href='edit_comment.html?comment_id=${element.id}'">edit comment</button>
+        <button type="button" class="btn btn-outline-dark" id="edit_delete" onclick=handleDeleteComment(${element.id})>delete</button>
+        `      
+    })
+    comment_list.innerHTML = output
 }
 
 
@@ -40,4 +52,38 @@ function article_delete() {
         method: "DELETE"
     })
     window.location.replace('articles.html')
+}
+
+async function comment_create(){
+    const inputItem = document.getElementById('comment_input').value
+    const response = await fetch(`${main_url}/article/${article_id}/comment/`,{
+        headers:{
+            "Authorization": "Bearer " + localStorage.getItem('access'),
+            "content-type": "application/json"
+        },
+        method: "POST",
+        body : JSON.stringify({
+            "content":inputItem
+        })
+    })
+    window.location.reload()
+}
+
+async function handleDeleteComment(commentId){
+
+    const response = await fetch(`${main_url}/article/${article_id}/comment/${commentId}/`,{
+        headers : {
+            'Authorization' : 'Bearer ' + localStorage.getItem('access'),
+            'content-type' : 'application/json',
+        },    
+        method : 'DELETE',
+        body : {}
+    })
+    window.location.replace('article_detail.html')
+    window.console.log('delete')
+}
+
+function handleLogout(){
+    localStorage.clear()
+    window.location.replace("api.html")
 }
