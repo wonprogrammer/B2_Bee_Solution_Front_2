@@ -17,11 +17,11 @@
         <nav class="navbar">
             <a href="main.html">Beesolution</a>
             <ul class="navbar__menu">
-                <button class="custom-btn btn-5" onclick="location.href='create_solution.html'"><span>soultion</span></button>
-                <button class="custom-btn btn-5" onclick="location.href='articles.html'"><span>category</span></button>
-                <button class="custom-btn btn-5" onclick="location.href='main.html'"><span>고민 작성</span></button>
-                <button class="custom-btn btn-5" onclick="location.href='profile.html'"><span>Profile</span></button>
-                <button class="custom-btn btn-5" onclick="handleLogout()"><span>Logout</span></button>
+                <button class="custom-btn btn-5" onclick="location.href='create_solution.html'">soultion</button>
+                <button class="custom-btn btn-5" onclick="location.href='articles.html'">category</button>
+                <button class="custom-btn btn-5" onclick="location.href='main.html'">고민 작성</button>
+                <button class="custom-btn btn-5" onclick="location.href='profile.html'">Profile</button>
+                <button class="custom-btn btn-5" onclick="handleLogout()">Logout</button>
             </ul>
         </nav>
     </div>
@@ -40,14 +40,14 @@
                     <button type="button" class="btn btn-outline-dark" onclick="location.href='main.html'">고민 공유하기</button>
                 </div>
                 <div class="articles_btn">
-                    <button type="button" class="btn btn-outline-dark" onclick="myarticleslist()">내가 작성한 글 보기</button>
+                    <button type="button" class="btn btn-outline-dark" onclick="load_articles()">내가 작성한 게시글 보기</button>
                 </div>
             </div>
-        </div>      
+        </div> 
     </div>
 
-    <div class="myarticles" id="myarticles">
-        <div id = myarticles_list></div>
+    <div class="wrap">
+        <div id="articles"></div>
     </div>
 
     <script src="/js/profile.js"></script>

@@ -146,9 +146,7 @@ button {
 
 
 /* profile css */
-.container{
-    margin-top: 200px;
-}
+
 
 .user_upload_img {
     border : 1px solid gray;
@@ -223,18 +221,12 @@ button {
 
 
 .row {
-    margin-top: 100px;
     margin-left: 150px;
+    margin-right: 100px;
     width : 400px;
     float: left;
 }
 
-.row2{
-    margin-top: 150px;
-    margin-right: 120px;
-    margin-bottom: 100px;
-    width : 400px;
-    height: 490px;
-    float: right;
-    overflow: auto;
+.wrap{
+    margin-top: 300px;
 }
