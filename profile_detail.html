@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <title>Profile 수정</title>
+    <title>Profile detail</title>
     <link rel="stylesheet" type="text/css" href="/css/profile_detail.css">
 </head>
 <body>
@@ -17,11 +17,11 @@
         <nav class="navbar">
             <a href="main.html">Beesolution</a>
             <ul class="navbar__menu">
-                <button class="custom-btn btn-5" onclick="location.href='create_solution.html'"><span>soultion</span></button>
-                <button class="custom-btn btn-5" onclick="location.href='articles.html'"><span>category</span></button>
-                <button class="custom-btn btn-5" onclick="location.href='main.html'"><span>고민 작성</span></button>
-                <button class="custom-btn btn-5" onclick="location.href='profile.html'"><span>Profile</span></button>
-                <button class="custom-btn btn-5" onclick="handleLogout()"><span>Logout</span></button>
+                <button class="custom-btn btn-5" onclick="location.href='create_solution.html'">soultion</button>
+                <button class="custom-btn btn-5" onclick="location.href='articles.html'">category</button>
+                <button class="custom-btn btn-5" onclick="location.href='main.html'">고민 작성</button>
+                <button class="custom-btn btn-5" onclick="location.href='profile.html'">Profile</button>
+                <button class="custom-btn btn-5" onclick="handleLogout()">Logout</button>
             </ul>
         </nav>
     </div>
@@ -33,23 +33,24 @@
             </div>
             <h3 class="username" id="user_name"></h3>
 
-        </div>
-
-        <div class="row">
             <div class="profile_detail_btn">
                 <h5>프로필 이미지 업로드</h5>
                 <input class="form-control" type="file" id="file" accept="image/*">
                 <div class="profile_detail_finish">
                     <button type="button" class="btn btn-outline-dark" id="profilesendButton" onclick="userProfileUpload()"> 프로필 이미지 저장하기 </button>
                 </div>
-            <hr class="line">
+                <hr class="line">
                 <div class="profile_detail_finish">
                     <button type="button" class="btn btn-outline-dark" onclick="location.href='profile.html'"> 프로필 페이지로 돌아가기</button>
                 </div>
             </div>
-
         </div>
     </div>
+
+    <div class="row2" id="put_user_info">
+        <button class="custom-btn btn-5">ID 바꾸기</button>
+        <button class="custom-btn btn-5">Password 바꾸기</button>
+    </div> 
 
     <script src="/js/profile.js"></script>
     
