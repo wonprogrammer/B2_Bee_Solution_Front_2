@@ -28,7 +28,7 @@ window.onload = () => { //solution_id 얻기 위해 두번 fetch
     method : 'GET',
  }).then((response) => response.json())
     .then((data) => {
-        let solution_id = data.solution.id
+        let solution_id = data.solution[0]
         fetch(`${main_url}/article/worry/${solution_id}/`, {
             headers : {
             'Authorization' : 'Bearer ' + localStorage.getItem('access'),
@@ -37,9 +37,13 @@ window.onload = () => { //solution_id 얻기 위해 두번 fetch
         method : 'GET',
      }).then((response) => response.json())
      .then((data) => {
-        
-        let solution = document.getElementById('solution')
-        solution.innerText = data.wise // 솔루션 이미지로 대체 할 것 
+        const img_box = document.getElementById('solution')
+        const sol_img = document.createElement('img')
+        sol_img.src = `${main_url}${data.solution_image}`
+        sol_img.style.width = '550px';
+        sol_img.style.height = '400px';
+        sol_img.style.margin = '10px 15px';
+        sol_img.style.borderRadius = '5%' 
 
         const best = document.getElementById('best_btn') //좋아요 버튼 = 4
         best.onclick = function(){
@@ -55,7 +59,7 @@ window.onload = () => { //solution_id 얻기 위해 두번 fetch
         bad.onclick = function(){
             rating(data.id, 0)
         }
-        
+        img_box.appendChild(sol_img)
      })
     }), 1000
     );
