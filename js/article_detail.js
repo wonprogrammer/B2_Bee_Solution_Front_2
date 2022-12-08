@@ -2,6 +2,7 @@ const payload = localStorage.getItem('payload')
 const personObj = JSON.parse(payload)
 const userId = personObj['user_id']
 const article_id = localStorage.getItem('article_id')
+const comment_get_id = localStorage.getItem('comment_id')
 const main_url = "http://127.0.0.1:8000"
 
 window.onload = async function load_detail() {
@@ -29,17 +30,22 @@ window.onload = async function load_detail() {
         article_del.style.visibility = 'hidden'
     }
 
-    const comment_list = document.getElementById('comment_list')
-    let output = ''
     
-    response_json.comment_set.reverse().forEach(element => {
-        output += `
-        <input class="form-control" type="text" value="${element.content}           -${element.article_user}" readonly>
-        <button type="button" class="btn btn-outline-dark" id="edit_comment_btn" onclick="location.href='edit_comment.html?comment_id=${element.id}'">edit comment</button>
-        <button type="button" class="btn btn-outline-dark" id="edit_delete" onclick=handleDeleteComment(${element.id})>delete</button>
-        `      
-    })
-    comment_list.innerHTML = output
+    
+   // if (response_json.user != userId){
+        const comment_list = document.getElementById('comment_list')
+        let output = ''
+        response_json.comment_set.reverse().forEach(element => {
+            output += `
+            <input class="form-control" type="text" value="${element.content}" readonly>
+            
+            <button type="button" class="btn btn-outline-dark" id="edit_comment_btn" onclick=save_comment_id(${element.id}) data-bs-toggle="modal" data-bs-target="#comment_edit_modal">edit comment</button>
+            <button type="button" class="btn btn-outline-dark" id="edit_delete" onclick=comment_delete(${element.id})>delete</button>
+            `      
+        })
+        comment_list.innerHTML = output
+   // }
+    
 }
 
 
@@ -76,9 +82,10 @@ function article_edit() {
     window.location.reload()
 }
 
-async function comment_create(){
+function comment_create(){
+  
     const inputItem = document.getElementById('comment_input').value
-    const response = await fetch(`${main_url}/article/${article_id}/comment/`,{
+    const response = fetch(`${main_url}/article/${article_id}/comment/`,{
         headers:{
             "Authorization": "Bearer " + localStorage.getItem('access'),
             "content-type": "application/json"
@@ -88,12 +95,13 @@ async function comment_create(){
             "content":inputItem
         })
     })
+    
     window.location.reload()
 }
 
-async function handleDeleteComment(commentId){
+function comment_delete(comment_id){
 
-    const response = await fetch(`${main_url}/article/${article_id}/comment/${commentId}/`,{
+    const response = fetch(`${main_url}/article/${article_id}/comment/${comment_id}/`,{
         headers : {
             'Authorization' : 'Bearer ' + localStorage.getItem('access'),
             'content-type' : 'application/json',
@@ -105,7 +113,27 @@ async function handleDeleteComment(commentId){
     window.console.log('delete')
 }
 
+function comment_edit(){ 
+    const comment_edit_input = document.getElementById('comment_edit_input').value
+    const get_comment_id = localStorage.getItem("comment_id")
+    const response = fetch(`${main_url}/article/${article_id}/comment/${get_comment_id}/`,{
+        headers : {
+            'Authorization' : 'Bearer ' + localStorage.getItem('access'),
+            'content-type' : 'application/json',
+        },    
+        method : 'PUT',
+        body : JSON.stringify({
+            "content": comment_edit_input
+        })
+    })
+    window.location.replace('article_detail.html')
+}
+
 function handleLogout(){
     localStorage.clear()
     window.location.replace("api.html")
+}
+
+function save_comment_id(comment_id){
+    localStorage.setItem('comment_id',comment_id)    
 }
