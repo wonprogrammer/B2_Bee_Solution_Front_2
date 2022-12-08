@@ -9,6 +9,7 @@
     left: 0;
     right: 0;
     top: 0;
+    z-index: 15;
 }
 
 .navbar>a{
@@ -145,6 +146,9 @@ button {
   }
 
 
+
+
+
 /* profile css */
 .user_upload_img {
     border : 1px solid gray;
@@ -167,6 +171,8 @@ button {
 .user_profile_img{
     width: 300px;
     height: 300px; 
+    position: fixed;
+    border-radius: 30%;
 }
 
 
@@ -187,11 +193,13 @@ button {
 .username{
     align-items: center;
     margin-left: 120px;
+    position: fixed;
 }
 
 .profile_btn{
-    margin-top: 20px;
+    margin-top: 120px;
     margin-left: 25px;
+    position: fixed;
 }
 
 .profile_btn>button{
@@ -200,6 +208,8 @@ button {
 
 .articles_btn>button{
     width: 250px;
+    margin-top: 40px;
+    position: fixed;
 }
 
 .articles_btn{
