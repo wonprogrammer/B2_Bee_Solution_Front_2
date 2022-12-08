@@ -164,3 +164,10 @@ button {
 .dropdown{
     margin-left: 20px;
 }
+
+#pagination_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
