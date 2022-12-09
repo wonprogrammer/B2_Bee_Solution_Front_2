@@ -148,16 +148,18 @@ button {
 
 /* creste_solution css */
 .wrap{
+    margin-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 
     height: 750px;
+    
 }
 
 .left_box{  
-    margin-top: 700px;
+    margin-top: 200px;
     text-align:left;
     width: 33%;
     height: 75%;
@@ -168,7 +170,7 @@ button {
 }
 
 .right_box{
-    margin-top: 500px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -198,3 +200,7 @@ button {
     color: gray;
   }
   
+.all_button{
+    margin-top: 30px;
+    margin-left: 300px;
+}
