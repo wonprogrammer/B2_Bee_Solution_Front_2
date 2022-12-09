@@ -31,13 +31,15 @@
             <form>
                 <h4> 명언 </h4>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="wise" placeholder="wise saying" >
+                    <input type="text" class="form-control" id="wise" placeholder="wise saying" onkeyup='printwise()'>
                     <label for="wise">Wise saying</label>
-                    <p><small> 🚨현재 슬래시(/)는 줄바꿈을 위한 기호로 사용되고 있습니다. 문장이 길어질 시 슬래시(/)를 이용해 적절히 끊어주세요.🚨 </small></p>
+                    <p><small> 🚨현재 슬래시(/)는 줄바꿈을 위한 기호로 사용되고 있습니다.🚨 </small></p>
+                    <p><small> 🚨한 문장이 길어질 시 슬래시(/)를 이용해 적절히 끊어주세요🚨 </small></p>
+                    <p><small> 🚨실제로 생성되는 이미지의 텍스트는 미리보기와 달리 자동 중앙정렬이 됩니다🚨 </small></p>
                 </div>
                 <h4> 닉네임 </h4>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="nickname" placeholder="nickname" >
+                    <input type="text" class="form-control" id="nickname" placeholder="nickname" onkeyup='printnickname()'>
                     <label for="nickname">Nickname</label>
                 </div>
                 <button class="btn btn-outline-dark" type="button" onclick="handleUploadimg()">저장</button>
@@ -51,8 +53,13 @@
                     <input class="form-control" type="file" id="file" accept="image/*">
                 </div>
                 <div class="preview-Img-box">
-                    <img class="preview-Img" id="previewImg" alt="" width = "500px" height='350px'/>
-                    <div class="preview-Img-text">이미지 미리보기</div>
+                    <img class="preview-Img" id="previewImg" alt="" width = "600px" height='400px'/>
+                    <div class="preview-wise" id="result">미리보기</div>
+                    <div class="preview-wise" id="result2" style="top: 31%;"></div>
+                    <div class="preview-wise" id="result3" style="top: 42%;"></div>
+                    <div class="preview-wise" id="result4" style="top: 53%;"></div>
+                    <div class="preview-wise" id="result5" style="top: 64%;"></div>
+                    <div class="preview-nickname" id="result_nickname"></div>
                 </div>
             </form>
             <div class="all_button">
