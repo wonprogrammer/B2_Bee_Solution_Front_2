@@ -3,7 +3,7 @@ function handleLogout(){
     localStorage.clear()
     window.location.replace("api.html")
 }
-
+const article_id = localStorage.getItem('article_id')
 
 const main_url = "http://127.0.0.1:8000"
 
@@ -57,11 +57,11 @@ async function handleUploadimg(){
     formdata.append('wise', wise)
     formdata.append('nickname', nickname)
 
-    const response = await fetch(`${main_url}/article/0/solution/`, {
+    const response = await fetch(`${main_url}/article/${article_id}/solution/`, {
         headers: { 
             'Authorization': 'Bearer '+ localStorage.getItem('access')
         },
         method: 'POST',
         body: formdata
-    }).then(window.location.replace('solution_collection.html'))
+    }).then(window.location.replace('solution_detail.html'))
 }
