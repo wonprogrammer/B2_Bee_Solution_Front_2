@@ -14,24 +14,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <title>Beesolution</title>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <style> 
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap'); 
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Ubuntu:wght@500&display=swap');
+    </style>
+    
 </head>
 <body>
     <div class="basetool">
         <nav class="navbar">
-            <a href="main.html">Beesolution</a>
+            <a href="main.html"><img src="profile_default.jpg" style="width:150px;"><br> beesolution</a>
             <ul class="navbar__menu">
                 <button class="custom-btn btn-5" onclick="location.href='create_solution.html'">soultion</button>
                 <button class="custom-btn btn-5" onclick="location.href='articles.html'">category</button>
-                <button class="custom-btn btn-5" onclick="location.href='main.html'">고민 작성</button>
-                <button class="custom-btn btn-5" onclick="location.href='profile.html'">Profile</button>
-                <button class="custom-btn btn-5" onclick="handleLogout()">Logout</button>
+                <button class="custom-btn btn-5" onclick="location.href='main.html'">worry</button>
+                <button class="custom-btn btn-5" onclick="location.href='profile.html'">profile</button>
+                <button class="custom-btn btn-5" onclick="handleLogout()">logout</button>
             </ul>
         </nav>
     </div>
     <div class="wrap">
         <div class = category_box>
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     mbti 게시글 보기
                 </button>
                 <ul class="dropdown-menu">
@@ -56,7 +63,7 @@
                 </ul>
               </div>
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     카테고리 별 게시글 보기
                 </button>
                 <ul class="dropdown-menu">
@@ -75,7 +82,7 @@
         <div class='left_box'>
             <h2>AI BeeSolution</h2>
             <h4>MBTI</h4>
-            <div>
+            <div class="form_div">
                 <select class="form-select" id = 'input_mbti'>
                     <option selected>-- mbti를 골라주세요 -- </option>
                     <option value="1">ENFP</option>
@@ -96,8 +103,8 @@
                     <option value="16">ISTJ</option>
                 </select>
             </div>
-            <h4>카테고리</h4>
-            <div>
+            <h4>Category</h4>
+            <div class="form_div">
                 <select class="form-select" id = 'input_category'>
                     <option selected>-- 카테고리를 골라주세요 -- </option>
                     <option value="1">음식</option>
@@ -110,13 +117,16 @@
                     <option value="8">연예</option>
                 </select>
             </div>
-            <h4>고민 내용</h4>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="input_worry" placeholder="고민을 입력해주세요">
-                <label for="floatingInput">고민을 입력해주세요</label>
+            <div class="form_div">
+                <h4>고민 내용</h4>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="input_worry" placeholder="고민을 입력해주세요">
+                    <label for="floatingInput">고민을 입력해주세요</label>
+                </div>
             </div>
-            <button type="button" class="btn btn-outline-secondary" onclick=create_worry()>AI bee의 고민 분석</button>
-            <button class="custom-btn btn-5" onclick="location.href='solution_collection.html'">명언집 보러가기</button>
+            
+            <button type="button" class="btn btn-warning btn-outline-dark" onclick=create_worry()>AI bee의 고민 분석</button>
+            <button type="button" class="btn btn-warning btn-outline-dark" onclick="location.href='solution_collection.html'">명언집 보러가기</button>
         </div>
     </div>
     <script src="/js/main.js"></script>
