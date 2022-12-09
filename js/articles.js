@@ -30,7 +30,7 @@ async function get_articles(page_param){
         method : 'GET',
     })
     response_json = await response.json()
-    console.log( response_json)}
+    console.log( esponse_json)}
     return response_json
 }
 
