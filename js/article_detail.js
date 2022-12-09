@@ -2,8 +2,33 @@ const payload = localStorage.getItem('payload')
 const personObj = JSON.parse(payload)
 const userId = personObj['user_id']
 const article_id = localStorage.getItem('article_id')
-const comment_get_id = localStorage.getItem('comment_id')
 const main_url = "http://127.0.0.1:8000"
+
+async function get_comment(page_param){
+    if(page_param==''){
+        const response = await fetch(`${main_url}/article/${article_id}/comment/`,{
+            headers : {
+                "Authorization": "Bearer" + localStorage.getItem("access"),
+                "content-type": "application/json"
+            },
+            method : 'GET',
+        })
+        response_json = await response.json()
+        return response_json
+    }
+    else{
+        page = page_param.split('=')[1]
+        const response = await fetch(`${main_url}/article/${article_id}/comment/?page=${page}`,{
+            headers:{
+                "Authorization":"Bearer" + localStorage.getItem("access"),
+                "content-type": "application/json"
+            },
+            method:'GET',
+        })
+        response_json = await response.json()
+        return response_json
+    }
+}
 
 window.onload = async function load_detail() {
     const response = await fetch(`${main_url}/article/${article_id}/detail/`, {
@@ -30,7 +55,53 @@ window.onload = async function load_detail() {
         article_del.style.visibility = 'hidden'
     }
 
+    page_param = location.search
+    var page = parseInt(page_param.split('=')[1])
+
+    myComment_list = await get_comment(page_param)
     
+    let total_comments = myComment_list.count
+    let page_count = Math.ceil(total_comments / 3)
+
+    if(page_param == ""){
+        current_page = 1
+    }
+    else{
+        current_page = page
+    }
+
+    let page_group = Math.ceil(current_page / 5)
+    let last_number = page_group * 5
+
+    if(last_number > page_count){
+        last_number = page_count
+    }
+    let first_number = last_number - (5-1)
+    
+    const next = current_page + 1
+    const prev = current_page - 1
+    let pagination_box = document.getElementById('pagination_box')
+    let page_btn = '<ul class="pagination">'
+    if(myComment_list.previous != null){
+        page_btn += `<<li class="page-item" ><a class="page-link" href="article_detail.html?page=${prev}">Prev</a></li>`
+    }
+    for(let i=first_number; i<= last_number; i++ ){
+        if(i == current_page){
+            page_btn += `<li class="page-item active" aria-current="page"><a class="page-link"href="profile.html?page=${i}">${i}</a></li>`
+        } else {
+
+        page_btn += `<li class="page-item" ><a class="page-link" href="article_detail.html?page=${i}">${i}</a></li>`
+    }}
+    
+    if (response_json.next != null){
+        page_btn += `
+        <li class="page-item" ><a class="page-link" href="article_detail.html?page=${next}">Next</a></li>
+      `
+
+    }
+    page_btn += '</ul>'
+    
+    pagination_box.innerHTML = page_btn
     
    // if (response_json.user != userId){
         const comment_list = document.getElementById('comment_list')
