@@ -148,3 +148,42 @@ button {
 
 
 /* solution_collection css */
+
+
+li {
+    float:left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  #img_box {
+      
+      width: 1200px;
+      margin : 100px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+  
+  .op_btn_box{
+      display: flex;
+      justify-content: right;
+      flex-direction: row;  
+      margin-top: 30px;
+      margin-right: 330px;
+  }
+  
+  #main_img{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+  }
