@@ -43,16 +43,73 @@ async function load_solution_collection(){
         solution_img.style.margin = '10px 15px';
         solution_img.style.borderRadius = '15%'
 
-
         
-        img_tag.appendChild(solution_img)
-        main_img.appendChild(img_tag)        
+        const rating_box = document.createElement('div') //
+        rating_box.classList.add('rating_box');
+
+
+        const rating_btn_best = document.createElement('buton') // 좋아요
+        rating_btn_best.classList.add('btn');
+        rating_btn_best.classList.add('btn-outline-secondary');
+        const rating_btn_best_text = document.createTextNode('좋아요') // 좋아요
+        rating_btn_best.onclick = function(){
+            rating(element.id, 4)
+            console.log(element.id)
+        }
+
+        const rating_btn_soso = document.createElement('buton') // 글쎄요
+        rating_btn_soso.classList.add('btn');
+        rating_btn_soso.classList.add('btn-outline-secondary');
+        const rating_btn_soso_text = document.createTextNode('글쎄요')
+        rating_btn_soso.onclick = function(){
+            rating(element.id, 2)
+            console.log(element.id)
+        }        
+
+        const rating_btn_bad = document.createElement('buton') // 안좋아요
+        rating_btn_bad.classList.add('btn');
+        rating_btn_bad.classList.add('btn-outline-secondary');
+        const rating_btn_bad_text = document.createTextNode('안좋아요')
+        rating_btn_bad.onclick = function(){
+            rating(element.id, 0)
+            console.log(element.id)
+        }        
+
+
         img_box.appendChild(main_img)
+        main_img.appendChild(solution_img)        
+        
 
+        // main_img.appendChild(img_tag)        
+        // img_tag.appendChild(solution_img)
 
+        main_img.appendChild(rating_box)
+        rating_box.appendChild(rating_btn_best)
+        rating_btn_best.appendChild(rating_btn_best_text)
+        rating_box.appendChild(rating_btn_soso)
+        rating_btn_soso.appendChild(rating_btn_soso_text)
+        rating_box.appendChild(rating_btn_bad)
+        rating_btn_bad.appendChild(rating_btn_bad_text)
 
     })    
 }
+
+async function rating(solution_id, value){
+    
+    const response = await fetch(`${main_url}/article/worry/${solution_id}/`,{
+        headers : {
+            'Authorization' : 'Bearer ' + localStorage.getItem('access'),
+            'content-type': 'application/json'
+        },
+        method : 'POST',
+        body : JSON.stringify({
+            "rating" : value
+        })
+
+    })
+    alert('평가완료')
+}
+
 
 
 // 로그아웃
