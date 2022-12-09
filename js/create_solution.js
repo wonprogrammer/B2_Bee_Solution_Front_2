@@ -19,6 +19,31 @@ const handleFiles = (e) => {
 }
 fileInput.addEventListener("change", handleFiles)
 
+function printwise(){
+    var wise = document.getElementById('wise').value
+    console.log(typeof(wise))
+    var slicing_wise = wise.split('/')
+    console.log(slicing_wise)
+    
+    document.getElementById("result").innerText = slicing_wise[0]
+    if(slicing_wise[1]){
+        document.getElementById("result2").innerText = slicing_wise[1]    
+    }
+    if(slicing_wise[2]){
+        document.getElementById("result3").innerText = slicing_wise[2]    
+    }
+    if(slicing_wise[3]){
+        document.getElementById("result4").innerText = slicing_wise[3]    
+    }
+    if(slicing_wise[4]){
+        document.getElementById("result5").innerText = slicing_wise[4]    
+    }
+}
+
+function printnickname(){
+    var nickname = document.getElementById("nickname").value
+    document.getElementById("result_nickname").innerText = '- ' + nickname
+}
 
 async function handleUploadimg(){
     const img = document.querySelector('#file')

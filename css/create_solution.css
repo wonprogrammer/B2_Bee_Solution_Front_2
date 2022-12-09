@@ -148,16 +148,18 @@ button {
 
 /* creste_solution css */
 .wrap{
+    margin-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 
     height: 750px;
+    
 }
 
 .left_box{  
-    margin-top: 700px;
+    margin-top: 200px;
     text-align:left;
     width: 33%;
     height: 75%;
@@ -168,7 +170,7 @@ button {
 }
 
 .right_box{
-    margin-top: 500px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -178,23 +180,45 @@ button {
 .preview-Img-box {
     border: 1px solid lightgray;
     border-radius: 3px;
-    height: 350px;
-    width: 500px;
+    height: 400px;
+    width: 600px;
     background: lightgray;
     position: relative;
 }
 
 .preview-Img {
     border: 1px solid lightgray;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
-.preview-Img-text {
+.preview-wise {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 18px;
-    color: gray;
+    top: 20%;
+    left: 20%;
+    transform: translate(0%, 0%);
+    font-size: 30px;
+    color: white;
+    background-color:rgba(0,0,0,.6);
+    white-space: nowrap;
   }
+
   
+.all_button{
+    margin-top: 30px;
+    margin-left: 300px;
+}
+
+
+.preview-nickname {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(0%, 0%);
+    font-size: 20px;
+    color: white;
+    background-color:rgba(0,0,0,.6);
+    white-space: nowrap;
+}
+
+  
+
