@@ -149,13 +149,23 @@ async function load_articles(){
         page_btn += `<li class="page-item" ><a class="page-link" href="profile.html?page=${prev}">Prev</a></li>`
     }
     
-    for(let i=first_number; i<= last_number; i++ ){
-        if(i == current_page){
-            page_btn += `<li class="page-item active" aria-current="page"><a class="page-link"href="profile.html?page=${i}">${i}</a></li>`
-        } else {
-
-        page_btn += `<li class="page-item" ><a class="page-link" href="profile.html?page=${i}">${i}</a></li>`
-    }}
+    if (page_count >= 5) {
+        for(let i=first_number; i<= last_number; i++ ){
+           if(i == current_page){
+               page_btn += `<li class="page-item active" aria-current="page"><a class="page-link"href="href="profile.html?page=${i}">${i}</a></li>`
+           } else {
+       
+           page_btn += `<li class="page-item" ><a class="page-link" href="href="profile.html?page=${i}">${i}</a></li>`}
+       
+       }} else {
+           for (let i = 1; i <= page_count; i++){
+               if(i == current_page){
+                   page_btn += `<li class="page-item active" aria-current="page"><a class="page-link"href="href="profile.html?page=${i}">${i}</a></li>`
+               } else {
+           
+               page_btn += `<li class="page-item" ><a class="page-link" href="href="profile.html?page=${i}">${i}</a></li>`
+           }
+       }}
     
     if (response_json.next != null){
         page_btn += `

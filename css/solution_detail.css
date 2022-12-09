@@ -53,7 +53,7 @@
         align-items: flex-start;
         padding: 8px 24px;
     }
-    
+
     .navbar__menu {
         display: none;
         flex-direction: column;
@@ -145,80 +145,14 @@ button {
     transition:800ms ease all;
   }
 
+  /* solution_detail css */
 
-/* creste_solution css */
-.wrap{
-    margin-top: 100px;
+  .wrap{
+    margin-top: 150px;
+    width: 1200px;
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-
-    height: 750px;
-    
-}
-
-.left_box{  
-    margin-top: 200px;
-    text-align:left;
-    width: 33%;
-    height: 75%;
-}
-
-.form-floating{
-    margin-bottom: 20px;
-}
-
-.right_box{
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 20px;
-}
-
-.preview-Img-box {
-    border: 1px solid lightgray;
-    border-radius: 3px;
-    height: 400px;
-    width: 600px;
-    background: lightgray;
-    position: relative;
-}
-
-.preview-Img {
-    border: 1px solid lightgray;
-    opacity: 0.8;
-}
-
-.preview-wise {
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    transform: translate(0%, 0%);
-    font-size: 30px;
-    color: white;
-    background-color:rgba(0,0,0,.6);
-    white-space: nowrap;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
-
-  
-.all_button{
-    margin-top: 30px;
-    margin-left: 300px;
-}
-
-
-.preview-nickname {
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(0%, 0%);
-    font-size: 20px;
-    color: white;
-    background-color:rgba(0,0,0,.6);
-    white-space: nowrap;
-}
-
-  
-
