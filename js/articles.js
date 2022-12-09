@@ -30,7 +30,7 @@ async function get_articles(page_param){
         method : 'GET',
     })
     response_json = await response.json()
-    console.log( response_json)}
+    console.log( esponse_json)}
     return response_json
 }
 
@@ -73,13 +73,23 @@ window.onload = async function load_articles(){
         page_btn += `<li class="page-item" ><a class="page-link" href="articles.html?page=${prev}">Prev</a></li>`
     }
     
-    for(let i=first_number; i<= last_number; i++ ){
-        if(i == current_page){
-            page_btn += `<li class="page-item active" aria-current="page"><a class="page-link"href="articles.html?page=${i}">${i}</a></li>`
-        } else {
-
-        page_btn += `<li class="page-item" ><a class="page-link" href="articles.html?page=${i}">${i}</a></li>`
-    }}
+    if (page_count >= 5) {
+        for(let i=first_number; i<= last_number; i++ ){
+           if(i == current_page){
+               page_btn += `<li class="page-item active" aria-current="page"><a class="page-link"href="articles.html?page=${i}">${i}</a></li>`
+           } else {
+       
+           page_btn += `<li class="page-item" ><a class="page-link" href="articles.html?page=${i}">${i}</a></li>`}
+       
+       }} else {
+           for (let i = 1; i <= page_count; i++){
+               if(i == current_page){
+                   page_btn += `<li class="page-item active" aria-current="page"><a class="page-link"href="articles.html?page=${i}">${i}</a></li>`
+               } else {
+           
+               page_btn += `<li class="page-item" ><a class="page-link" href="articles.html?page=${i}">${i}</a></li>`
+           }
+       }}
     
     if (response_json.next != null){
         page_btn += `
