@@ -47,7 +47,8 @@
         </div>
     </div>
 
-    <div class="modal fade" id="password_edit_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- 모달 창 -->
+    <!-- <div class="modal fade" id="password_edit_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -65,10 +66,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+
 
     <div class="row2" id="put_user_info">
-        <button class="custom-btn btn-5">ID 바꾸기</button>
+        <input type="text" class="form-control" name="new_username" id="new_username" placeholder="새로운 ID를 적어주세요" />
+        <button class="custom-btn btn-5" onclick="changeusername()">ID 바꾸기</button>
         <button id='password_edit_btn' type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#password_edit_modal">수정</button>
     </div> 
 

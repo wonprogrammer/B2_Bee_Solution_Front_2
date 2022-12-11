@@ -206,4 +206,21 @@ function save_category_id(category_id){
 }
 
 
-// 비밀번호 변경
+// username 변경
+async function changeusername(){
+    const new_username = document.getElementById('new_username')
+
+    const response = await fetch(`${main_url}/users/update_profile/${userId}/`, {
+        headers: { 
+            'Authorization': 'Bearer '+ localStorage.getItem('access'),
+            "content-type": "application/json"
+        },
+        method: "PUT",
+        body: JSON.stringify({
+            "username":new_username,
+        })
+    }
+    )
+    response_json = await response.json()
+    console.log(response_json)
+}
