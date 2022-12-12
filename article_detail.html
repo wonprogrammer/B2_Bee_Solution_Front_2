@@ -57,18 +57,10 @@
             <button class="btn btn-outline-secondary" type="button" id="comment_create" onclick="comment_create()" >입력</button>
           </div>
 
-          <div class= 'comment_list' id = 'comment_list'>                
-                <!-- <button type="button" class="btn btn-outline-dark" id = 'edit_comment_btn' data-bs-toggle="modal" data-bs-target="#comment_edit_modal">
-                <button type="button" class="btn btn-outline-dark" id = 'edit_delete' onclick="comment_delete()"> -->
-
-            </div>
-
-            <div class="row">
-              <div id="pagination_box"></div>
-
-          </div>
+          <div class= 'comment_list' id = 'comment_list'></div>
         </div>
     </div>
+    <div id="pagination_box"></div>
 
      <!-- Modal -->
 <div class="modal fade" id="article_edit_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -134,6 +126,7 @@
         <div class="modal-header">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <div class="modal-body">                            
             <input type="text" class="form-control" id="comment_edit_input" placeholder="댓글을 수정해주세요">
 

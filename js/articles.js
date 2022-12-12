@@ -76,7 +76,7 @@ window.onload = async function load_articles(){
     if (page_count >= 5) {
         for(let i=first_number; i<= last_number; i++ ){
            if(i == current_page){
-               page_btn += `<li class="page-item active" aria-current="page"><a class="page-link"href="articles.html?page=${i}">${i}</a></li>`
+               page_btn += `<li class="page-item active my-active" aria-current="page"><a class="page-link"href="articles.html?page=${i}">${i}</a></li>`
            } else {
        
            page_btn += `<li class="page-item" ><a class="page-link" href="articles.html?page=${i}">${i}</a></li>`}
@@ -106,11 +106,11 @@ window.onload = async function load_articles(){
     response_json.results.forEach(element=>{
         
         output += `
-        <div class="card text-center" style="width: 30rem; margin-top: 10px;">
+        <div class="card text-center" >
             <div class="card-body">
                 <h5 class="card-title">${element.category} / ${element.mbti}</h5>
                 <p class="card-text">${element.content}</p>
-                <a href="javascript:save_article_id(${element.id});" class="btn btn-outline-secondary">게시글 보기</a>
+                <a href="javascript:save_article_id(${element.id});" class="btn btn-warning btn-outline-dark">게시글 보기</a>
             </div>
         </div>
         `    

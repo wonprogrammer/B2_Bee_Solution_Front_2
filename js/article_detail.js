@@ -30,30 +30,7 @@ window.onload = async function load_detail() {
         const article_del = document.getElementById('article_del_btn')
         article_del.style.visibility = 'hidden'
     }
-    load_comments();
-
- //  if (response_json.user != userId){
-        const comment_list = document.getElementById('comment_list')
-        let output = ''
-        response_json.comment_set.reverse().forEach(element => {
-
-            if (userId == element.user){
-            output += `
-            <input class="form-control" type="text" value="${element.content}" readonly>
-            <button type="button" class="btn btn-outline-dark" id="edit_comment_btn" onclick=save_comment_id(${element.id}) data-bs-toggle="modal" data-bs-target="#comment_edit_modal">
-            <img style = 'width:20px;' src='https://cdn-icons-png.flaticon.com/512/1250/1250615.png'></button>
-            <button type="button" class="btn btn-outline-dark" id="edit_delete" onclick=comment_delete(${element.id})>
-            <img style = 'width:20px'; src='https://cdn-icons-png.flaticon.com/512/2907/2907762.png'></button>
-            `  }
-            else {
-                output += `
-                <input class="form-control" type="text" value="${element.content}" readonly>
-                <br>`
-            }    
-        })
-        comment_list.innerHTML = output
-  // }
-    
+    load_comments(); 
 }
 
 async function get_comment(page_param){
@@ -66,15 +43,7 @@ async function get_comment(page_param){
             method : 'GET',
         })
         response_json = await response.json()
-        console.log(response_json)
-        
-        var my_comment = new Array
-        response_json.results.forEach(element =>{
-            if(element.user == userId){
-                my_comment.push(element)
-            }
-        })
-        return my_comment
+        return response_json
     }
     else{
         page = page_param.split('=')[1]
@@ -86,15 +55,7 @@ async function get_comment(page_param){
             method:'GET',
         })
         response_json = await response.json()
-        console.log(response_json)
-
-        var my_comment = new Array
-        response_json.results.forEach(element =>{
-            if(element.user == userId){
-                my_comment.push(element)
-            }
-        })
-        return my_comment
+        return response_json
     }
 }
 
@@ -104,8 +65,8 @@ async function load_comments(){
 
     myComment_list = await get_comment(page_param)
     
-    let total_comments = myComment_list.count
-    let page_count = Math.ceil(total_comments / 3)
+    let total_comments = myComment_list.results.count
+    var page_count = Math.ceil(total_comments / 6)
 
     if(page_param == ""){
         current_page = 1
@@ -131,23 +92,6 @@ async function load_comments(){
         page_btn += `<li class="page-item" ><a class="page-link" href="article_detail.html?page=${prev}">Prev</a></li>`
     }
 
-    if(page_count >= 5){
-        for(let i=first_number; i<= last_number; i++ ){
-            if(i == current_page){
-                page_btn += `<li class="page-item active" aria-current="page"><a class="page-link"href="article_detail.html?page=${i}">${i}</a></li>`
-            } else {
-    
-            page_btn += `<li class="page-item" ><a class="page-link" href="article_detail.html?page=${i}">${i}</a></li>`
-        }}
-    }else{
-        for(let i = 1; i<=page_count;i++){
-            if(i== current_page){
-                page_btn += `<li class="page-item active" aria-current="page"><a class="page-link"href="article_detail.html?page=${i}">${i}</a></li>`
-            }else{
-                page_btn += `<li class="page-item" ><a class="page-link" href="article_datail.html?page=${i}">${i}</a></li>`
-            }
-        }}
-        
     if (response_json.next != null){
         page_btn += `
         <li class="page-item" ><a class="page-link" href="article_detail.html?page=${next}">Next</a></li>
@@ -160,15 +104,20 @@ async function load_comments(){
   
     const comment_list = document.getElementById('comment_list')
     let output = ''
-    response_json.comment_set.reverse().forEach(element => {
-        if(userId != output){
-            output +=``
-        }
-        output += `
-        <input class="form-control" type="text" value="${element.content}" readonly>            
-        <button type="button" class="btn btn-outline-dark" id="edit_comment_btn" onclick=save_comment_id(${element.id}) data-bs-toggle="modal" data-bs-target="#comment_edit_modal">edit comment</button>
-        <button type="button" class="btn btn-outline-dark" id="edit_delete" onclick=comment_delete(${element.id})>delete</button>`      
-        })
+    response_json.results.reverse().forEach(element => {
+        if(userId !=element.user){
+            output +=`<input class="form-control" type="text" value="${element.content}" readonly>
+            <br>`
+        } else {
+            output += `
+            <input class="form-control" type="text" value="${element.content}" readonly>
+            <button type="button" class="btn btn-outline-dark" id="edit_comment_btn" onclick=save_comment_id(${element.id}) data-bs-toggle="modal" data-bs-target="#comment_edit_modal">
+            <img style = 'width:20px;' src='https://cdn-icons-png.flaticon.com/512/1250/1250615.png'></button>
+            <button type="button" class="btn btn-outline-dark" id="edit_delete" onclick=comment_delete(${element.id})>
+            <img style = 'width:20px'; src='https://cdn-icons-png.flaticon.com/512/2907/2907762.png'></button>
+            `       
+    }
+    })
     comment_list.innerHTML = output
 
 }

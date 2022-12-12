@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background:#263343; */
+    background:white;
     padding: 8px 12px;
     position: fixed;
     left: 0;
@@ -184,7 +184,7 @@ button {
 .custom-btn {
     width: 130px;
     height: 40px;
-    color: #fff;
+    color: black;
     border-radius: 5px;
     padding: 10px 25px;
     font-family: 'Lato', sans-serif;
