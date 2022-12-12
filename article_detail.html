@@ -9,6 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>article_detail</title>
     <link rel="stylesheet" href="/css/article_detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <style> 
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap'); 
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Ubuntu:wght@500&display=swap');
+    </style>
     <!-- 위에 참고된 css는 임시로 지정해놨습니다. 추후 개발시 변경 요청 -->
 </head>
 <body>
@@ -18,7 +24,7 @@
             <ul class="navbar__menu">
                 <button class="custom-btn btn-5" onclick="location.href='create_solution.html'">soultion</button>
                 <button class="custom-btn btn-5" onclick="location.href='articles.html'">category</button>
-                <button class="custom-btn btn-5" onclick="location.href='main.html'">고민 작성</button>
+                <button class="custom-btn btn-5" onclick="location.href='main.html'">Worry</button>
                 <button class="custom-btn btn-5" onclick="location.href='profile.html'">Profile</button>
                 <button class="custom-btn btn-5" onclick="handleLogout()">Logout</button>
             </ul>
@@ -26,31 +32,34 @@
     </div>
     <div class="wrap">
         <div class="article_box">
-            <h4>카테고리</h4>
-            <input type="text" class="form-control" id="article_category"readonly>
-            <h4>고민 내용</h4>
-            <input class="form-control" id="article_content" style="height: 100px" readonly>
+            <div class = 'writer_info'>
+              <div class ='writer_name'><p style="font-size: 30px;">익명</p></div>
+              <p>카테고리</p>
+              <input type="text" class="form-control" id="article_category" name = 'category' readonly>
+            </div>
+            <div class = 'content'>
+              <p>고민내용</p>
+              <input class="form-control" id="article_content" readonly>
+            </div>
+
             <div class='article_btns'>
-              <button id='article_edit_btn' type="button" class="btn btn-warning btn-outline-dark" data-bs-toggle="modal" data-bs-target="#article_edit_modal">수정</button>
-              <button id='article_del_btn' type="button" class="btn btn-warning btn-outline-dark" onclick="article_delete()">삭제</button>
-              <button type="button" class="btn btn-warning btn-outline-dark" onclick="location.href='solution_detail.html'">상황에 맞는 솔루션</button>
-          </div>
-      </div>
-      <div class="comment_box">
-lete()">삭제</button>
+                <button id='article_edit_btn' type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#article_edit_modal">수정</button>
+                <button id='article_del_btn' type="button" class="btn btn-outline-secondary" onclick="article_delete()">삭제</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="location.href='solution_detail.html'">상황에 맞는 솔루션</button>
             </div>
         </div>
         <div class="comment_box">
-            <button type="button" class="btn btn-outline-secondary" onclick="location.href='solution_detail.html'">상황에 맞는 솔루션</button>
-            <h4>댓글</h4>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" id="comment_input" placeholder="댓글을 입력해주세요"  aria-describedby="button-addon2">
-                <button class="btn btn-outline-secondary" type="button" id="comment_create" onclick="comment_create()" >입력</button>
-              </div>
-            <div class= 'comment_list' id = 'comment_list'>                
+            
+          <h4>댓글</h4>
+          <div class="input-group mb-3" id = 'input_box'>
+            <input type="text" class="form-control" id="comment_input" placeholder="댓글을 입력해주세요"  aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="comment_create" onclick="comment_create()" >입력</button>
+          </div>
+
+          <div class= 'comment_list' id = 'comment_list'>                
                 <!-- <button type="button" class="btn btn-outline-dark" id = 'edit_comment_btn' data-bs-toggle="modal" data-bs-target="#comment_edit_modal">
                 <button type="button" class="btn btn-outline-dark" id = 'edit_delete' onclick="comment_delete()"> -->
-            </div>
+          </div>
         </div>
     </div>
 
@@ -118,11 +127,8 @@ lete()">삭제</button>
         <div class="modal-header">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">                       
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="comment_edit_input" placeholder="댓글을 입력해주세요">
-                <label for="floatingInput">고민을 입력해주세요</label>
-            </div>
+        <div class="modal-body">                            
+            <input type="text" class="form-control" id="comment_edit_input" placeholder="댓글을 수정해주세요">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" onclick="comment_edit()">Save</button>
