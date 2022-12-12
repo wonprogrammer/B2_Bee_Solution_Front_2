@@ -4,31 +4,7 @@ const userId = personObj['user_id']
 const article_id = localStorage.getItem('article_id')
 const main_url = "http://127.0.0.1:8000"
 
-async function get_comment(page_param){
-    if(page_param==''){
-        const response = await fetch(`${main_url}/article/${article_id}/comment/`,{
-            headers : {
-                "Authorization": "Bearer" + localStorage.getItem("access"),
-                "content-type": "application/json"
-            },
-            method : 'GET',
-        })
-        response_json = await response.json()
-        return response_json
-    }
-    else{
-        page = page_param.split('=')[1]
-        const response = await fetch(`${main_url}/article/${article_id}/comment/?page=${page}`,{
-            headers:{
-                "Authorization":"Bearer" + localStorage.getItem("access"),
-                "content-type": "application/json"
-            },
-            method:'GET',
-        })
-        response_json = await response.json()
-        return response_json
-    }
-}
+
 
 window.onload = async function load_detail() {
     const response = await fetch(`${main_url}/article/${article_id}/detail/`, {
@@ -54,7 +30,67 @@ window.onload = async function load_detail() {
         const article_del = document.getElementById('article_del_btn')
         article_del.style.visibility = 'hidden'
     }
+    load_comments();
 
+ //  if (response_json.user != userId){
+        const comment_list = document.getElementById('comment_list')
+        let output = ''
+        response_json.comment_set.reverse().forEach(element => {
+            output += `
+            <input class="form-control" type="text" value="${element.content}" readonly>
+            
+            <button type="button" class="btn btn-outline-dark" id="edit_comment_btn" onclick=save_comment_id(${element.id}) data-bs-toggle="modal" data-bs-target="#comment_edit_modal">edit comment</button>
+            <button type="button" class="btn btn-outline-dark" id="edit_delete" onclick=comment_delete(${element.id})>delete</button>
+            `      
+        })
+        comment_list.innerHTML = output
+  // }
+    
+}
+
+async function get_comment(page_param){
+    if(page_param==''){
+        const response = await fetch(`${main_url}/article/${article_id}/comment/`,{
+            headers : {
+                "Authorization": "Bearer" + localStorage.getItem("access"),
+                "content-type": "application/json"
+            },
+            method : 'GET',
+        })
+        response_json = await response.json()
+        console.log(response_json)
+        
+        var my_comment = new Array
+        response_json.results.forEach(element =>{
+            if(element.user == userId){
+                my_comment.push(element)
+            }
+        })
+        return my_comment
+    }
+    else{
+        page = page_param.split('=')[1]
+        const response = await fetch(`${main_url}/article/${article_id}/comment/?page=${page}`,{
+            headers:{
+                "Authorization":"Bearer" + localStorage.getItem("access"),
+                "content-type": "application/json"
+            },
+            method:'GET',
+        })
+        response_json = await response.json()
+        console.log(response_json)
+
+        var my_comment = new Array
+        response_json.results.forEach(element =>{
+            if(element.user == userId){
+                my_comment.push(element)
+            }
+        })
+        return my_comment
+    }
+}
+
+async function load_comments(){
     page_param = location.search
     var page = parseInt(page_param.split('=')[1])
 
@@ -82,44 +118,52 @@ window.onload = async function load_detail() {
     const prev = current_page - 1
     let pagination_box = document.getElementById('pagination_box')
     let page_btn = '<ul class="pagination">'
-    if(myComment_list.previous != null){
-        page_btn += `<<li class="page-item" ><a class="page-link" href="article_detail.html?page=${prev}">Prev</a></li>`
-    }
-    for(let i=first_number; i<= last_number; i++ ){
-        if(i == current_page){
-            page_btn += `<li class="page-item active" aria-current="page"><a class="page-link"href="profile.html?page=${i}">${i}</a></li>`
-        } else {
 
-        page_btn += `<li class="page-item" ><a class="page-link" href="article_detail.html?page=${i}">${i}</a></li>`
-    }}
+    if(myComment_list.previous != null){
+        page_btn += `<li class="page-item" ><a class="page-link" href="article_detail.html?page=${prev}">Prev</a></li>`
+    }
+
+    if(page_count >= 5){
+        for(let i=first_number; i<= last_number; i++ ){
+            if(i == current_page){
+                page_btn += `<li class="page-item active" aria-current="page"><a class="page-link"href="article_detail.html?page=${i}">${i}</a></li>`
+            } else {
     
+            page_btn += `<li class="page-item" ><a class="page-link" href="article_detail.html?page=${i}">${i}</a></li>`
+        }}
+    }else{
+        for(let i = 1; i<=page_count;i++){
+            if(i== current_page){
+                page_btn += `<li class="page-item active" aria-current="page"><a class="page-link"href="article_detail.html?page=${i}">${i}</a></li>`
+            }else{
+                page_btn += `<li class="page-item" ><a class="page-link" href="article_datail.html?page=${i}">${i}</a></li>`
+            }
+        }}
+        
     if (response_json.next != null){
         page_btn += `
         <li class="page-item" ><a class="page-link" href="article_detail.html?page=${next}">Next</a></li>
-      `
-
+        `
     }
     page_btn += '</ul>'
     
     pagination_box.innerHTML = page_btn
     
-   // if (response_json.user != userId){
-        const comment_list = document.getElementById('comment_list')
-        let output = ''
-        response_json.comment_set.reverse().forEach(element => {
-            output += `
-            <input class="form-control" type="text" value="${element.content}" readonly>
-            
-            <button type="button" class="btn btn-outline-dark" id="edit_comment_btn" onclick=save_comment_id(${element.id}) data-bs-toggle="modal" data-bs-target="#comment_edit_modal">edit comment</button>
-            <button type="button" class="btn btn-outline-dark" id="edit_delete" onclick=comment_delete(${element.id})>delete</button>
-            `      
+  
+    const comment_list = document.getElementById('comment_list')
+    let output = ''
+    response_json.comment_set.reverse().forEach(element => {
+        if(userId != output){
+            output +=``
+        }
+        output += `
+        <input class="form-control" type="text" value="${element.content}" readonly>            
+        <button type="button" class="btn btn-outline-dark" id="edit_comment_btn" onclick=save_comment_id(${element.id}) data-bs-toggle="modal" data-bs-target="#comment_edit_modal">edit comment</button>
+        <button type="button" class="btn btn-outline-dark" id="edit_delete" onclick=comment_delete(${element.id})>delete</button>`      
         })
-        comment_list.innerHTML = output
-   // }
-    
+    comment_list.innerHTML = output
+
 }
-
-
 function article_delete() {
     const response = fetch(`${main_url}/article/${article_id}/detail/`, {
         headers: {
