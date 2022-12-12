@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,71 +8,64 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <title>Profile detail</title>
-    <link rel="stylesheet" type="text/css" href="/css/profile_detail.css">
+    <title>Beesolution</title>
+    <link rel="stylesheet" type="text/css" href="../css/profile_detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <style> 
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap'); 
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Ubuntu:wght@500&display=swap');
+    </style>
+    
 </head>
 <body>
     <div class="basetool">
         <nav class="navbar">
-            <a href="main.html">Beesolution</a>
+            <a href="main.html"><img src="profile_default.jpg" style="width:130px;"><br> beesolution</a>
             <ul class="navbar__menu">
                 <button class="custom-btn btn-5" onclick="location.href='create_solution.html'">soultion</button>
                 <button class="custom-btn btn-5" onclick="location.href='articles.html'">category</button>
-                <button class="custom-btn btn-5" onclick="location.href='main.html'">고민 작성</button>
-                <button class="custom-btn btn-5" onclick="location.href='profile.html'">Profile</button>
-                <button class="custom-btn btn-5" onclick="handleLogout()">Logout</button>
+                <button class="custom-btn btn-5" onclick="location.href='main.html'">worry</button>
+                <button class="custom-btn btn-5" onclick="location.href='profile.html'">profile</button>
+                <button class="custom-btn btn-5" onclick="handleLogout()">logout</button>
             </ul>
         </nav>
     </div>
 
-    <div class="profile_detail_container">
+    <div class="wrap">
         <div class="row">
-            <div class="profile" >
-                <img class="user_profile_img" id="user_profile_img">
-            </div>
-            <h3 class="username" id="user_name"></h3>
-
-            <div class="profile_detail_btn">
-                <h5>프로필 이미지 업로드</h5>
-                <input class="form-control" type="file" id="file" accept="image/*">
-                <div class="profile_detail_finish">
-                    <button type="button" class="btn btn-outline-dark" id="profilesendButton" onclick="userProfileUpload()"> 프로필 이미지 저장하기 </button>
+            <div class="col-4">
+                <div class="profile" >
+                    <img class="user_profile_img" id="user_profile_img">
                 </div>
-                <hr class="line">
-                <div class="profile_detail_finish">
+                <h3 class="username" id="user_name"></h3>
+                <div class="profile_finish">
                     <button type="button" class="btn btn-outline-dark" onclick="location.href='profile.html'"> 프로필 페이지로 돌아가기</button>
                 </div>
             </div>
+
+            <div class="col-8">
+                <div class="titletext">
+                    <h5>프로필 이미지 업로드</h5>
+                </div>
+
+                <div class="profile_detail_btn">
+                    <input class="form-control" type="file" id="file" accept="image/*">
+
+                    <div class="profile_detail_finish">
+                        <button type="button" class="btn btn-outline-dark" id="profilesendButton" onclick="userProfileUpload()"> 프로필 이미지 저장하기 </button>
+                    </div>
+                </div>
+
+                <div class="deleteusertext">
+                    <h5> 회원 탈퇴 버튼을 누르는 즉시 회원 탈퇴되며, 되돌릴 수 없습니다 </h5>
+                </div>
+                <button type="button" class="btn btn-outline-dark" id="deleteuserbtn" onclick="deleteuser()"> 회원 탈퇴 </button>
+            </div>
+
         </div>
     </div>
 
-    <!-- 모달 창 -->
-    <!-- <div class="modal fade" id="password_edit_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">                       
-                    <div class="form-floating mb-3">
-                        <input type="password" class="form-control" name="password" id="password" placeholder="password" />
-                        <input type="password" class="form-control" name="password1" id="password1" placeholder="password check" />
-                        <label for="floatingInput">password를 입력해주세요</label>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="password_edit()">Save</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-
-    <div class="row2" id="put_user_info">
-        
-        <button class="custom-btn btn-5" onclick="deleteuser()">회원탈퇴</button>
-        <!-- <button id='password_edit_btn' type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#password_edit_modal">수정</button> -->
-    </div> 
 
     <script src="/js/profile.js"></script>
     
