@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background:#263343;
+    background:white;
     padding: 8px 12px;
     position: fixed;
     left: 0;
@@ -13,7 +13,7 @@
 }
 
 .navbar>a{
-    color: darkorange;
+    color: #F5D10D;
     display: block;
     text-align: center;
     padding: 14px 16px;
@@ -22,11 +22,11 @@
 
 .navbar__logo {
     font-size: 24px;
-    color: white;
+    color: black;
 }
 
 .navbar__logo i {
-    color: #d49466;
+    color: #F5D10D;
 }
 
 .navbar__menu {
@@ -43,11 +43,11 @@
 }
 
 .navbar__menu :hover {
-    background: #d49466;
+    background: #F5D10D;
     border-radius: 4px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 935px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -84,11 +84,11 @@
 
 button {
     margin: 5px;
-  }
+}
 .custom-btn {
     width: 130px;
     height: 40px;
-    color: #fff;
+    color: black;
     border-radius: 5px;
     padding: 10px 25px;
     font-family: 'Lato', sans-serif;
@@ -102,6 +102,8 @@ button {
      7px 7px 20px 0px rgba(0,0,0,.1),
      4px 4px 5px 0px rgba(0,0,0,.1);
     outline: none;
+    font-family: 'Ubuntu', sans-serif;
+
 }
 
 .btn-5 {
@@ -110,11 +112,11 @@ button {
     line-height: 42px;
     padding: 0;
     border: none;
-    background: rgb(255,27,0);
-  background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
-  }
-  .btn-5:hover {
-    color: #f0094a;
+    background: #F5D10D;
+  background: #F5D10D;
+}
+.btn-5:hover {
+    color: #F5D10D;
     background: transparent;
      box-shadow:none;
   }
@@ -126,9 +128,9 @@ button {
     right:0;
     height:2px;
     width:0;
-    background: #f0094a;
+    background: #F5D10D;
     box-shadow:
-     -1px -1px 5px 0px #fff,
+    -1px -1px 5px 0px #fff,
      7px 7px 20px 0px #0003,
      4px 4px 5px 0px #0002;
     transition:400ms ease all;
@@ -148,75 +150,94 @@ button {
 
 
 /* profile detail css */
-.profile_detail_container{
-    margin-left: 350px;
-    margin-top: 100px;
+.wrap{
+    font-family: 'Ubuntu', sans-serif;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 200px;
+    margin-left: 250px;
 }
 
 .profile {
-    margin-top: 200px;
+    border : 3px solid #F5D10D;
     width: 300px;
-    height: 300px; 
+    height: 300px;
+    border-radius: 30%;
+    overflow: hidden;
     align-items: center;
     justify-content: center;
 }
-
+    
 .user_profile_img{
-    border-radius: 30%;
     width: 300px;
-    height: 300px; 
+    height: 300px;
+    border-radius: 30%;
 }
-
 
 .username{
     align-items: center;
-    margin-top: 15px;
-    margin-left: 120px;
-}
-
-.user_upload_img {
-    border : 1px solid gray;
-    font-size: 20px;
-    width: 300px;
-    height: 300px;
-}
-
-.form-control{
-    width: 450px;
+    margin-left: 125px;
 }
 
 .profile_detail_btn{
-    margin-top: 50px;
+    border-radius: 5%;
+    width: 600px;
 }
 
 .form-control{
+    width: 500px;
+    margin-left: 50px;
     margin-top: 20px;
-    width: 310px;
-}
-
-.profile_detail_finish>button{
-    margin-top: 20px;
-    width: 300px;
 }
 
 .line{
-    margin-top: 30px;
+    width: 500px;
+    margin-left: 50px;
+    color: #F5D10D;
+}
+
+.titletext{
+    margin-left: 220px;
+    margin-bottom: 30px;
+}
+
+.profile_detail_finish>button{
+    width: 500px;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border : 2px solid #F5D10D;
+}
+.profile_detail_finish>button:hover {
+    background-color: #F5D10D;
+    color: black;
+}
+
+.col-8>button{
+    width: 500px;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border : 2px solid #F5D10D;
+}
+.col-8>button:hover {
+    background-color: #F5D10D;
+    color: black;
+}
+
+.deleteusertext{
+    margin-top: 60px;
+    margin-left: 55px;
+}
+
+.profile_finish>button{
     width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border : 2px solid #F5D10D;
 }
-
-.row {
-    margin-top: 100px;
-    margin-left: 150px;
-    width : 400px;
-    float: left;
-}
-
-.row2{
-    margin-top: 350px;
-    margin-right: 120px;
-    margin-bottom: 100px;
-    width : 400px;
-    height: 490px;
-    float: right;
-    overflow: auto;
+.profile_finish>button:hover {
+    background-color: #F5D10D;
+    color: black;
 }
