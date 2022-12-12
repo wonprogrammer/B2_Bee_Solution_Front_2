@@ -14,51 +14,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <title>Beesolution</title>
     <link rel="stylesheet" type="text/css" href="../css/signup_userchr.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="basetool">
-    </div>
-    <div class="wrap">
-        <div class='left_box'>
-            <h2>AI BeeSolution</h2>
-            <p>입력해주시면 성향을 반영해서<br> 솔루션을 진단해드립니다.</p>
-            <h4>MBTI</h4>
-            <div>
-                <select class="form-select" id ='input_mbti'>
-                    <option selected>-- mbti를 골라주세요 -- </option>
-                    <option value="1">ENFP</option>
-                    <option value="2">ENFJ</option>
-                    <option value="3">ENTP</option>
-                    <option value="4">ENTJ</option>
-                    <option value="5">ESFP</option>
-                    <option value="6">ESFJ</option>
-                    <option value="7">ESTP</option>
-                    <option value="8">ESTJ</option>
-                    <option value="9">INFP</option>
-                    <option value="10">INFJ</option>
-                    <option value="11">INTP</option>
-                    <option value="12">INTJ</option>
-                    <option value="13">ISFP</option>
-                    <option value="14">ISFJ</option>
-                    <option value="15">ISTP</option>
-                    <option value="16">ISTJ</option>
-                </select>
+    <div class="container">
+        <div class="wrap">
+            <div class='left_box'>
+                <h2>AI BeeSolution</h2>
+                <p>입력해주시면 성향을 반영해서<br> 솔루션을 진단해드립니다.</p>
+                <h4>MBTI</h4>
+                <div>
+                    <select class="form-select" id ='input_mbti'>
+                        <option selected>-- mbti를 골라주세요 -- </option>
+                        <option value="1">ENFP</option>
+                        <option value="2">ENFJ</option>
+                        <option value="3">ENTP</option>
+                        <option value="4">ENTJ</option>
+                        <option value="5">ESFP</option>
+                        <option value="6">ESFJ</option>
+                        <option value="7">ESTP</option>
+                        <option value="8">ESTJ</option>
+                        <option value="9">INFP</option>
+                        <option value="10">INFJ</option>
+                        <option value="11">INTP</option>
+                        <option value="12">INTJ</option>
+                        <option value="13">ISFP</option>
+                        <option value="14">ISFJ</option>
+                        <option value="15">ISTP</option>
+                        <option value="16">ISTJ</option>
+                    </select>
+                </div>
+                <h4>카테고리</h4>
+                <div>
+                    <select class="form-select" id ='input_gender'>
+                        <option selected>-- 성별을 골라주세요 -- </option>
+                        <option value="1">남자</option>
+                        <option value="2">여자</option>
+                    </select>
+                </div>
+                <h4>나이</h4>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="input_age" placeholder="나이를 입력해주세요">
+                    <label for="floatingInput">나이를 입력해주세요</label>
+                </div>
+                <button type="button" class="btn btn-outline-secondary" onclick=create_UserChr()>다음</button>
+                <button type="button" class="btn btn-outline-secondary" onclick=skip()>넘어가기</button>
             </div>
-            <h4>카테고리</h4>
-            <div>
-                <select class="form-select" id ='input_gender'>
-                    <option selected>-- 성별을 골라주세요 -- </option>
-                    <option value="1">남자</option>
-                    <option value="2">여자</option>
-                </select>
-            </div>
-            <h4>나이</h4>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="input_age" placeholder="나이를 입력해주세요">
-                <label for="floatingInput">나이를 입력해주세요</label>
-            </div>
-            <button type="button" class="btn btn-outline-secondary" onclick=create_UserChr()>다음</button>
-            <button type="button" class="btn btn-outline-secondary" onclick=skip()>넘어가기</button>
         </div>
     </div>
     <script src="/js/signup_userchr.js"></script>

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Ubuntu:wght@500&display=swap');
+
 /* navbar css */
 .navbar {
     display: flex;
@@ -80,13 +83,79 @@
         display: flex;
     }
 }
+
+
+/* main css */
+/* body{
+      background:#263343;
+  } */
+
+  .wrap{
+    font-family: 'Ubuntu', sans-serif;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 800px;
+}
+
+.left_box{  
+    margin:20px auto;
+    position: relative;
+    align-items: center;
+    background-color: #F5D10D;
+    text-align: center;
+    height: 70%;
+    padding:20px;
+    border-radius: 10px;
+}
+
+.left_box > div{
+    margin: 20px 0px;
+}
+
+.left_box> button{
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+@media ( min-width : 768px) {
+        
+    .left_box{  
+        margin:20px auto;
+        position: relative;
+        align-items: center;
+        background-color: #F5D10D;
+        text-align: center;
+        width: 90%;
+        height: 70%;
+        padding:20px;
+        border-radius: 10px;
+    }
+
+}
+
+@media ( min-width : 992px) {
+    .left_box{  
+        width: 60%;
+    }
+
+}
+@media ( min-width : 1200px) {
+    .left_box{  
+        width: 60%;
+    }
+
+}
+
+
+
 button {
     margin: 5px;
 }
 .custom-btn {
     width: 130px;
     height: 40px;
-    color: #fff;
+    color: black;
     border-radius: 5px;
     padding: 10px 25px;
     font-family: 'Lato', sans-serif;
@@ -100,6 +169,8 @@ button {
      7px 7px 20px 0px rgba(0,0,0,.1),
      4px 4px 5px 0px rgba(0,0,0,.1);
     outline: none;
+    font-family: 'Ubuntu', sans-serif;
+
 }
 
 .btn-5 {
@@ -108,11 +179,11 @@ button {
     line-height: 42px;
     padding: 0;
     border: none;
-    background: rgb(255,27,0);
-  background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
+    background: #F5D10D;
+  background: #F5D10D;
 }
 .btn-5:hover {
-    color: #f0094a;
+    color: #F5D10D;
     background: transparent;
      box-shadow:none;
   }
@@ -124,7 +195,7 @@ button {
     right:0;
     height:2px;
     width:0;
-    background: #f0094a;
+    background: #F5D10D;
     box-shadow:
     -1px -1px 5px 0px #fff,
      7px 7px 20px 0px #0003,
@@ -144,46 +215,17 @@ button {
   }
 
 
-
-  /* main css */
-body{
-      background:#263343;
-  }
-
-.wrap{
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 800px;
-}
 .dropdown{
     margin-top: 20px;
     margin-right: 20px;
-}
-
-.left_box{  
-    margin:auto;
-    margin-top: 20px;
-    position: relative;
-    align-items: center;
-    background-color: blanchedalmond;
-    text-align: center;
-    width: 35%;
-    height: 75%;
 }
 
 h2{
     margin-bottom: 20px;
 }
 
-.left_box > div{
-    margin: 20px 0px;
-}
 
-.left_box> button{
-    margin-top: 20px;
-    font-size: 20px;
-}
+
 
 .right_box{
     margin-top: 500px;
@@ -220,4 +262,17 @@ h2{
     margin-top: 10px;
     font-size: 23px;
     width: 110px;
+}
+
+
+body, h4, .btn, p, form-select, form-control {
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+.form_div{
+    width:90%;
+    align-items: center;
+    display: inline-block;
 }
