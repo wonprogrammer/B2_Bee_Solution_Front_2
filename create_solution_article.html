@@ -11,29 +11,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <title>create_solution_article</title>
     <link rel="stylesheet" type="text/css" href="../css/create_solution.css">
+    <style> 
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap'); 
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Ubuntu:wght@500&display=swap');
+    </style>
 </head>
 <body>
     <div class="basetool">
         <nav class="navbar">
-            <a href="main.html">Beesolution</a>
+            <a href="main.html"><img src="profile_default.jpg" style="width:130px;"><br> beesolution</a>
             <ul class="navbar__menu">
                 <button class="custom-btn btn-5" onclick="location.href='create_solution.html'">soultion</button>
                 <button class="custom-btn btn-5" onclick="location.href='articles.html'">category</button>
-                <button class="custom-btn btn-5" onclick="location.href='main.html'">고민 작성</button>
-                <button class="custom-btn btn-5" onclick="location.href='profile.html'">Profile</button>
-                <button class="custom-btn btn-5" onclick="handleLogout()">Logout</button>
+                <button class="custom-btn btn-5" onclick="location.href='main.html'">worry</button>
+                <button class="custom-btn btn-5" onclick="location.href='profile.html'">profile</button>
+                <button class="custom-btn btn-5" onclick="handleLogout()">logout</button>
             </ul>
         </nav>
     </div>
-
     <div class="wrap">
         <div class = 'left_box'>    
+            <form>
+                <div class='input-group' style="width: 600px;">
+                    <label class="input-group-text" for="images">사진 업로드</label>
+                    <input class="form-control" type="file" id="file" accept="image/*">
+                </div>
+                <div class="preview-Img-box">
+                    <img class="preview-Img" id="previewImg" alt="" width = "600px" height='400px'/>
+                    <div class="preview-wise" id="result">배경 선택 후 명언을 입력하세요</div>
+                    <div class="preview-wise" id="result2" style="top: 31%;"></div>
+                    <div class="preview-wise" id="result3" style="top: 42%;"></div>
+                    <div class="preview-wise" id="result4" style="top: 53%;"></div>
+                    <div class="preview-wise" id="result5" style="top: 64%;"></div>
+                    <div class="preview-nickname" id="result_nickname"></div>
+                </div>
+            </form>
+        </div>
+        <div class = 'right_box'>
             <form>
                 <h4> 명언 </h4>
                 <div class="form-floating">
                     <input type="text" class="form-control" id="wise" placeholder="wise saying" onkeyup='printwise()'>
-                    <label for="wise">Wise saying</label>
-                    <p><small> 🚨현재 슬래시(/)는 줄바꿈을 위한 기호로 사용되고 있습니다.🚨 </small></p>
+                    <label for="wise">Wise</label>
+                    <p><small> 🚨슬래시(/)는 줄바꿈을 위한 기호로 사용되고 있습니다.🚨 </small></p>
                     <p><small> 🚨한 문장이 길어질 시 슬래시(/)를 이용해 적절히 끊어주세요🚨 </small></p>
                     <p><small> 🚨실제로 생성되는 이미지의 텍스트는 미리보기와 달리 자동 중앙정렬이 됩니다🚨 </small></p>
                 </div>
@@ -42,33 +62,11 @@
                     <input type="text" class="form-control" id="nickname" placeholder="nickname" onkeyup='printnickname()'>
                     <label for="nickname">Nickname</label>
                 </div>
-                <button class="btn btn-outline-dark" type="button" onclick="handleUploadimg()">저장</button>
+                <button type="button" class="btn btn-warning btn-outline-dark" onclick="handleUploadimg()">저장</button>
+                <button type="button" class="btn btn-warning btn-outline-dark" onclick="window.location.replace('solution_collection.html')">명언집 보러가기</button>
             </form>
-        </div>
-
-        <div class = 'right_box'>
-            <form>
-                <div class='input-group'>
-                    <label class="input-group-text" for="images">사진 업로드</label>
-                    <input class="form-control" type="file" id="file" accept="image/*">
-                </div>
-                <div class="preview-Img-box">
-                    <img class="preview-Img" id="previewImg" alt="" width = "600px" height='400px'/>
-                    <div class="preview-wise" id="result">미리보기</div>
-                    <div class="preview-wise" id="result2" style="top: 31%;"></div>
-                    <div class="preview-wise" id="result3" style="top: 42%;"></div>
-                    <div class="preview-wise" id="result4" style="top: 53%;"></div>
-                    <div class="preview-wise" id="result5" style="top: 64%;"></div>
-                    <div class="preview-nickname" id="result_nickname"></div>
-                </div>
-            </form>
-            <div class="all_button">
-                <button type="button" class="btn btn-outline-secondary" onclick="window.location.replace('solution_collection.html')">전체 솔루션 보기</button>
-            </div>
         </div>
     </div>
-
-    
     <script src="../js/create_solution_article.js"></script>
 </body>
 </html>
