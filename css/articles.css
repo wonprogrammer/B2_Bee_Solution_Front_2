@@ -156,7 +156,8 @@ button {
      box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
      7px 7px 20px 0px rgba(0,0,0,.1),
      4px 4px 5px 0px rgba(0,0,0,.1);
-    /* outline: none; */
+    outline: none;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .btn-5 {
@@ -213,6 +214,7 @@ button {
 
 .category_box{
     margin-top: 150px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -227,4 +229,22 @@ button {
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+}
+
+.category_box > button {
+    margin-top: 10px;
+    font-size: 23px;
+    width: 110px;
+}
+
+body, h4, .btn {
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+.form_div{
+    width:90%;
+    align-items: center;
+    display: inline-block;
 }
