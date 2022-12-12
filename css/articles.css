@@ -153,6 +153,7 @@ button {
   
 /* articles css */
 .wrap{
+    font-family: 'Ubuntu', sans-serif;
     position: relative;
     align-items: center;
     justify-content: center;
@@ -166,23 +167,6 @@ button {
     justify-content: center;
 }
 
-
-.dropdown{
-    margin-left: 20px;
-}
-
-#pagination_box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-
-body, h2, span, h4, .btn {
-    font-family: 'Ubuntu', sans-serif;
-    font-family: 'Noto Sans KR', sans-serif;
-}
 
 .article_box{
     margin:auto;
@@ -202,6 +186,97 @@ body, h2, span, h4, .btn {
     border-radius: 20px;
     background-color:#ffc107;
     border:solid black 1px;
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+@media ( max-width : 767px) {
+
+    .article_box{
+        margin:auto;
+        position: relative;
+        align-items: center;
+        background-color: #F5D10D;
+        text-align: center;
+        width: 90%;
+        height: 90%;
+        padding:20px;
+        border-radius: 10px;
+    }
+    
+    .card{
+        width:90%;
+        position: relative;
+        margin:20px auto 20px;
+        border-radius: 20px;
+        background-color:#ffc107;
+        border:solid black 1px;
+        font-family: 'Ubuntu', sans-serif;
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .articles{
+        position: relative;
+        margin:auto;
+        width:90%;
+    }
+}
+
+
+@media ( min-width : 768px) {
+        
+    .article_box{
+        margin:auto;
+        position: relative;
+        align-items: center;
+        background-color: #F5D10D;
+        text-align: center;
+        width: 60%;
+        height: 90%;
+        padding:20px;
+        border-radius: 10px;
+    }
+    .card{
+        position: relative;
+        margin:20px auto 20px;
+        border-radius: 20px;
+        background-color:#ffc107;
+        border:solid black 1px;
+        font-family: 'Ubuntu', sans-serif;
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+
+
+}
+
+@media ( min-width : 992px) {
+    .article_box{  
+        width: 60%;
+    }
+
+}
+@media ( min-width : 1200px) {
+    .article_box{  
+        width: 60%;
+    }
+
+}
+
+
+.dropdown{
+    margin-left: 20px;
+}
+
+#pagination_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+body, h2, span, h4, .btn {
     font-family: 'Ubuntu', sans-serif;
     font-family: 'Noto Sans KR', sans-serif;
 }

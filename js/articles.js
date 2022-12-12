@@ -30,7 +30,7 @@ async function get_articles(page_param){
         method : 'GET',
     })
     response_json = await response.json()
-    console.log( esponse_json)}
+    console.log(response_json)}
     return response_json
 }
 
@@ -106,7 +106,7 @@ window.onload = async function load_articles(){
     response_json.results.forEach(element=>{
         
         output += `
-        <div class="card text-center" style="width: 30rem; margin-top: 10px;">
+        <div class="card text-center" >
             <div class="card-body">
                 <h5 class="card-title">${element.category} / ${element.mbti}</h5>
                 <p class="card-text">${element.content}</p>
