@@ -1,9 +1,13 @@
+*{
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+}
 /* navbar css */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background:#263343; */
+    background:white;
     padding: 8px 12px;
     position: fixed;
     left: 0;
@@ -202,3 +206,7 @@ button {
     float: right;
 }
 
+#pagination_box{
+    float: right;
+    margin-right: 250px;
+}
