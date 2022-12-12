@@ -206,21 +206,18 @@ function save_category_id(category_id){
 }
 
 
-// username 변경
-async function changeusername(){
-    const new_username = document.getElementById('new_username')
+// username 삭제
+async function deleteuser(){
+    alert("정말 회원탈퇴를 진행하시겠습니까?, 회원탈퇴 후 계정을 복구할 수 없습니다")
 
-    const response = await fetch(`${main_url}/users/update_profile/${userId}/`, {
+    const response = await fetch(`${main_url}/users/${userId}/profile/`, {
         headers: { 
             'Authorization': 'Bearer '+ localStorage.getItem('access'),
             "content-type": "application/json"
         },
-        method: "PUT",
-        body: JSON.stringify({
-            "username":new_username,
-        })
+        method: "DELETE",
     }
     )
-    response_json = await response.json()
-    console.log(response_json)
+    localStorage.clear()
+    window.location.replace("api.html")
 }
