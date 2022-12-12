@@ -18,7 +18,7 @@ window.onload = async function load_detail() {
     console.log(response_json)
 
     const category = document.getElementById('article_category')
-    category.setAttribute('value', response_json.category)
+    category.setAttribute('value', response_json.mbti + '/' + response_json.category )
     const content = document.getElementById('article_content')
     content.setAttribute('value', response_json.content)
 
@@ -36,12 +36,20 @@ window.onload = async function load_detail() {
         const comment_list = document.getElementById('comment_list')
         let output = ''
         response_json.comment_set.reverse().forEach(element => {
+
+            if (userId == element.user){
             output += `
             <input class="form-control" type="text" value="${element.content}" readonly>
-            
-            <button type="button" class="btn btn-outline-dark" id="edit_comment_btn" onclick=save_comment_id(${element.id}) data-bs-toggle="modal" data-bs-target="#comment_edit_modal">edit comment</button>
-            <button type="button" class="btn btn-outline-dark" id="edit_delete" onclick=comment_delete(${element.id})>delete</button>
-            `      
+            <button type="button" class="btn btn-outline-dark" id="edit_comment_btn" onclick=save_comment_id(${element.id}) data-bs-toggle="modal" data-bs-target="#comment_edit_modal">
+            <img style = 'width:20px;' src='https://cdn-icons-png.flaticon.com/512/1250/1250615.png'></button>
+            <button type="button" class="btn btn-outline-dark" id="edit_delete" onclick=comment_delete(${element.id})>
+            <img style = 'width:20px'; src='https://cdn-icons-png.flaticon.com/512/2907/2907762.png'></button>
+            `  }
+            else {
+                output += `
+                <input class="form-control" type="text" value="${element.content}" readonly>
+                <br>`
+            }    
         })
         comment_list.innerHTML = output
    // }

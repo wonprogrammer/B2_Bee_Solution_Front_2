@@ -11,23 +11,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/solution_detail.css">
     <title>solution_detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Ubuntu:wght@500&display=swap"
+        rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Ubuntu:wght@500&display=swap');
+    </style>
 </head>
 <body>
-  <div class="basetool">
+  <  <div class="basetool">
     <nav class="navbar">
         <a href="main.html">Beesolution</a>
         <ul class="navbar__menu">
             <button class="custom-btn btn-5" onclick="location.href='create_solution.html'">soultion</button>
             <button class="custom-btn btn-5" onclick="location.href='articles.html'">category</button>
-            <button class="custom-btn btn-5" onclick="location.href='main.html'">고민 작성</button>
+            <button class="custom-btn btn-5" onclick="location.href='main.html'">Worry</button>
             <button class="custom-btn btn-5" onclick="location.href='profile.html'">Profile</button>
             <button class="custom-btn btn-5" onclick="handleLogout()">Logout</button>
         </ul>
     </nav>
 </div>
 
-<div class = 'wrap'>
-    <div id = img_box>
+< <div class='wrap'>
+    <button type="button" id='make_solution_btn' class="custom-btn btn-5"
+        onclick="location.href='create_solution_article.html'">make solution</button>
+    <div id='img_box'>
+
+    </div>
 
     </div>
     <button type="button" class="btn btn-outline-dark" onclick="location.href='create_solution_article.html'">솔루션 생성하기</button>
