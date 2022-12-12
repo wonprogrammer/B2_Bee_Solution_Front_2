@@ -84,7 +84,24 @@
         display: flex;
     }
 }
+.wrap{
+    font-family: 'Ubuntu', sans-serif;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 800px;
+}
 
+.left_box{  
+    margin:auto;
+    position: relative;
+    align-items: center;
+    background-color: #F5D10D;
+    text-align: center;
+    height: 70%;
+    padding:20px;
+    border-radius: 10px;
+}
 
 button {
     margin: 5px;
@@ -119,7 +136,8 @@ button {
     border: none;
     background: #F5D10D;
 }
-.btn-5:hover {
+
+  .btn-5:hover {
     color: #F5D10D;
     background: transparent;
     box-shadow:none;
@@ -162,6 +180,7 @@ button {
 
 
 .category_box{
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -275,6 +294,11 @@ button {
     margin-top: 10px;
 }
 
+.category_box > button {
+    margin-top: 10px;
+    font-size: 23px;
+    width: 110px;
+}
 
 body, h2, span, h4, .btn {
     font-family: 'Ubuntu', sans-serif;
@@ -297,4 +321,10 @@ body, h2, span, h4, .btn {
     background-color:#ffc107;
     border-color:black;
 
+}
+
+.form_div{
+    width:90%;
+    align-items: center;
+    display: inline-block;
 }

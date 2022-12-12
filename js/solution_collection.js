@@ -48,27 +48,30 @@ async function load_solution_collection(){
         rating_box.classList.add('rating_box');
 
 
-        const rating_btn_best = document.createElement('buton') // 좋아요
+        const rating_btn_best = document.createElement('botton') // 좋아요
         rating_btn_best.classList.add('btn');
-        rating_btn_best.classList.add('btn-outline-secondary');
+        rating_btn_best.classList.add('btn-warning');
+        rating_btn_best.classList.add('btn-outline-dark');
         const rating_btn_best_text = document.createTextNode('좋아요') // 좋아요
         rating_btn_best.onclick = function(){
             rating(element.id, 4)
             console.log(element.id)
         }
 
-        const rating_btn_soso = document.createElement('buton') // 글쎄요
+        const rating_btn_soso = document.createElement('button') // 글쎄요
         rating_btn_soso.classList.add('btn');
-        rating_btn_soso.classList.add('btn-outline-secondary');
+        rating_btn_soso.classList.add('btn-warning');
+        rating_btn_soso.classList.add('btn-outline-dark');
         const rating_btn_soso_text = document.createTextNode('글쎄요')
         rating_btn_soso.onclick = function(){
             rating(element.id, 2)
             console.log(element.id)
         }        
 
-        const rating_btn_bad = document.createElement('buton') // 안좋아요
+        const rating_btn_bad = document.createElement('button') // 안좋아요
         rating_btn_bad.classList.add('btn');
-        rating_btn_bad.classList.add('btn-outline-secondary');
+        rating_btn_bad.classList.add('btn-warning');
+        rating_btn_bad.classList.add('btn-outline-dark');
         const rating_btn_bad_text = document.createTextNode('안좋아요')
         rating_btn_bad.onclick = function(){
             rating(element.id, 0)

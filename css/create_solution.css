@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background:#263343;
+    /* background:#263343; */
     padding: 8px 12px;
     position: fixed;
     left: 0;
@@ -13,7 +13,7 @@
 }
 
 .navbar>a{
-    color: darkorange;
+    color: #F5D10D;
     display: block;
     text-align: center;
     padding: 14px 16px;
@@ -22,11 +22,11 @@
 
 .navbar__logo {
     font-size: 24px;
-    color: white;
+    color: black;
 }
 
 .navbar__logo i {
-    color: #d49466;
+    color: #F5D10D;
 }
 
 .navbar__menu {
@@ -43,11 +43,11 @@
 }
 
 .navbar__menu :hover {
-    background: #d49466;
+    background: #F5D10D;
     border-radius: 4px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 935px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -82,13 +82,15 @@
     }
 }
 
+
+
 button {
     margin: 5px;
   }
 .custom-btn {
     width: 130px;
     height: 40px;
-    color: #fff;
+    color: black;
     border-radius: 5px;
     padding: 10px 25px;
     font-family: 'Lato', sans-serif;
@@ -102,6 +104,7 @@ button {
      7px 7px 20px 0px rgba(0,0,0,.1),
      4px 4px 5px 0px rgba(0,0,0,.1);
     outline: none;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .btn-5 {
@@ -110,11 +113,11 @@ button {
     line-height: 42px;
     padding: 0;
     border: none;
-    background: rgb(255,27,0);
-  background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
-  }
-  .btn-5:hover {
-    color: #f0094a;
+    background: #F5D10D;
+  background: #F5D10D;
+}
+.btn-5:hover {
+    color: #F5D10D;
     background: transparent;
      box-shadow:none;
   }
@@ -126,9 +129,9 @@ button {
     right:0;
     height:2px;
     width:0;
-    background: #f0094a;
+    background: #F5D10D;
     box-shadow:
-     -1px -1px 5px 0px #fff,
+    -1px -1px 5px 0px #fff,
      7px 7px 20px 0px #0003,
      4px 4px 5px 0px #0002;
     transition:400ms ease all;
@@ -145,36 +148,42 @@ button {
     transition:800ms ease all;
   }
 
+.all_button{
+    margin-top: 30px;
+    margin-left: 300px;
+}
 
 /* creste_solution css */
 .wrap{
-    margin-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
-    height: 750px;
-    
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    height: 800px;
 }
 
 .left_box{  
     margin-top: 200px;
     text-align:left;
-    width: 33%;
+    width: 35%;
     height: 75%;
 }
 
 .form-floating{
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .right_box{
-    margin-top: 100px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: 20px;
+    background: #F5D10D;
+    border-radius: 5px;
+    padding: 10px 25px;
 }
 
 .preview-Img-box {
@@ -203,10 +212,7 @@ button {
   }
 
   
-.all_button{
-    margin-top: 30px;
-    margin-left: 300px;
-}
+
 
 
 .preview-nickname {

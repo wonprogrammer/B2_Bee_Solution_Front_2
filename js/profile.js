@@ -47,6 +47,7 @@ async function loaduseruploadimg(){
             document.getElementById("user_profile_img").src = fileReader.result
         }
     }
+    fileInput.addEventListener("change", handleFiles)
 }
 
 
@@ -66,46 +67,6 @@ async function userProfileUpload(){
     }
     )
 }
-
-
-// 로그인한 user 글만 가져오기
-// async function load_user_articles(){
-//     category_id = localStorage.getItem('category_id')
-//     const response = await fetch(`${main_url}/article/${category_id}/`,{
-//         headers : {
-//             "Authorization": "Bearer " + localStorage.getItem("access"),
-//             "content-type": "application/json"
-//         },
-//         method : 'GET',
-//     })
-//     response_json = await response.json()
-//     console.log(response_json)
-
-//     var my_articles = new Array
-//     response_json.forEach(element => {
-//         if (element.user == userId){
-//             my_articles.push(element)
-//         }
-//     })
-
-//     let articles_box = document.getElementById('articles')
-//     let output = ''
-//     my_articles.forEach(element=>{
-        
-//         output += `
-//         <div class="card text-center" style="width: 30rem; margin-top: 10px;">
-//             <div class="card-body">
-//                 <h5 class="card-title">${element.category} / ${element.mbti}</h5>
-//                 <p class="card-text">${element.content}</p>
-//                 <a href="javascript:save_article_id(${element.id});" class="btn btn-outline-secondary">게시글 보기</a>
-//             </div>
-//         </div>
-//         `    
-//     })
-//     articles_box.innerHTML = output
-// }
-
-
 
 async function get_articles(page_param){
     if (page_param == ''){
@@ -243,4 +204,21 @@ function save_article_id(article_id){
 function save_category_id(category_id){
     localStorage.setItem('category_id',category_id)
     window.location.reload()
+}
+
+
+// username 삭제
+async function deleteuser(){
+    alert("탈퇴완료")
+
+    const response = await fetch(`${main_url}/users/${userId}/profile/`, {
+        headers: { 
+            'Authorization': 'Bearer '+ localStorage.getItem('access'),
+            "content-type": "application/json"
+        },
+        method: "DELETE",
+    }
+    )
+    localStorage.clear()
+    window.location.replace("api.html")
 }
