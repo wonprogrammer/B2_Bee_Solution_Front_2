@@ -40,10 +40,7 @@ window.onload = () => { //solution_id 얻기 위해 두번 fetch
         const img_box = document.getElementById('solution')
         const sol_img = document.createElement('img')
         sol_img.src = `${main_url}${data.solution_image}`
-        sol_img.style.width = '550px';
-        sol_img.style.height = '400px';
-        sol_img.style.margin = '10px 15px';
-        sol_img.style.borderRadius = '5%' 
+
 
         const best = document.getElementById('best_btn') //좋아요 버튼 = 4
         best.onclick = function(){

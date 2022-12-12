@@ -47,6 +47,7 @@ async function loaduseruploadimg(){
             document.getElementById("user_profile_img").src = fileReader.result
         }
     }
+    fileInput.addEventListener("change", handleFiles)
 }
 
 
@@ -208,7 +209,7 @@ function save_category_id(category_id){
 
 // username 삭제
 async function deleteuser(){
-    alert("정말 회원탈퇴를 진행하시겠습니까?, 회원탈퇴 후 계정을 복구할 수 없습니다")
+    alert("탈퇴완료")
 
     const response = await fetch(`${main_url}/users/${userId}/profile/`, {
         headers: { 
