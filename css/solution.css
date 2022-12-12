@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Ubuntu:wght@500&display=swap');
+
 /* navbar css */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background:#263343;
+    /* background:#263343; */
     padding: 8px 12px;
     position: fixed;
     left: 0;
@@ -13,7 +16,7 @@
 }
 
 .navbar>a{
-    color: darkorange;
+    color: #F5D10D;
     display: block;
     text-align: center;
     padding: 14px 16px;
@@ -22,11 +25,11 @@
 
 .navbar__logo {
     font-size: 24px;
-    color: white;
+    color: black;
 }
 
 .navbar__logo i {
-    color: #d49466;
+    color: #F5D10D;
 }
 
 .navbar__menu {
@@ -43,11 +46,11 @@
 }
 
 .navbar__menu :hover {
-    background: #d49466;
+    background: #F5D10D;
     border-radius: 4px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 935px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -82,6 +85,99 @@
     }
 }
 
+
+/* solution css */
+.solution_box{  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 100px;
+    background-color: #F5D10D;
+    padding:20px;
+    border-radius: 10px;
+    padding:20px;
+    border-radius: 10px;
+}
+
+img{  
+    width : 550px;
+    height : 400px;
+    margin : 10px 15px;
+    border-radius : 5%; 
+}
+
+.solution_box > div {
+    margin: 30px 0px;
+}
+
+
+
+
+@media ( max-width : 767px) {
+    img{  
+        width:90%;
+    }
+
+}
+
+@media ( min-width : 768px) {
+    img{  
+        width:90%;
+    }
+
+    .solution_box{  
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-top: 100px;
+        background-color: #F5D10D;
+        width: 60%;
+        padding:20px;
+        border-radius: 10px;
+    }
+
+
+}
+
+@media ( min-width : 992px) {
+    img{  
+        width:90%;
+    }
+
+    .solution_box{  
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-top: 100px;
+        background-color: #F5D10D;
+        width: 60%;
+        padding:20px;
+        border-radius: 10px;
+    }
+
+}
+@media ( min-width : 1200px) {
+    .solution_box{  
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-top: 100px;
+        background-color: #F5D10D;
+        width: 60%;
+        padding:20px;
+        border-radius: 10px;
+    }
+
+}
+
 button {
     margin: 5px;
   }
@@ -102,7 +198,10 @@ button {
      7px 7px 20px 0px rgba(0,0,0,.1),
      4px 4px 5px 0px rgba(0,0,0,.1);
     outline: none;
+    font-family: 'Ubuntu', sans-serif;
+
 }
+
 
 .btn-5 {
     width: 130px;
@@ -110,13 +209,12 @@ button {
     line-height: 42px;
     padding: 0;
     border: none;
-    background: rgb(255,27,0);
-  background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
-  }
-  .btn-5:hover {
-    color: #f0094a;
+    background: #F5D10D;
+}
+.btn-5:hover {
+    color: #F5D10D;
     background: transparent;
-     box-shadow:none;
+    box-shadow:none;
   }
   .btn-5:before,
   .btn-5:after{
@@ -126,9 +224,9 @@ button {
     right:0;
     height:2px;
     width:0;
-    background: #f0094a;
+    background: #F5D10D;
     box-shadow:
-     -1px -1px 5px 0px #fff,
+    -1px -1px 5px 0px #fff,
      7px 7px 20px 0px #0003,
      4px 4px 5px 0px #0002;
     transition:400ms ease all;
@@ -145,20 +243,13 @@ button {
     transition:800ms ease all;
   }
 
-
-/* solution css */
-.solution_box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    margin-top: 200px;
-    background-color: blanchedalmond;
-    width: 50%;
-    height: 800px;
+body, h2, span, h4, .btn {
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
-.solution_box > div {
-    margin: 30px 0px;
+.spinner-border{
+    display: flex;
+    margin:auto;
+    
 }
