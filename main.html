@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,117 +20,106 @@
     
 </head>
 <body>
-    <div class="container">
-        <div class="basetool">
-            <nav class="navbar">
-                <a href="main.html"><img src="profile_default.jpg" style="width:130px;"><br> beesolution</a>
-                <ul class="navbar__menu">
-                    <button class="custom-btn btn-5" onclick="location.href='create_solution.html'">soultion</button>
-                    <button class="custom-btn btn-5" onclick="save_category_id(0)">category</button>
-                    <button class="custom-btn btn-5" onclick="location.href='main.html'">worry</button>
-                    <button class="custom-btn btn-5" onclick="location.href='profile.html'">profile</button>
-                    <button class="custom-btn btn-5" onclick="handleLogout()">logout</button>
-                </ul>
-            </nav>
-        </div>
-        <div class="row">
-            <div class="wrap">
-                <div class = category_box>
-                    <div class="dropdown">
-                        <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            mbti 게시글 보기
-                        </button>
-                        <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" onclick = save_category_id(0)>전체보기</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(9)>ENFP</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(10)>ENFJ</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(11)>ENTP</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(12)>ENTJ</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(13)>ESFP</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(14)>ESFJ</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(15)>ESTP</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(16)>ESTJ</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(17)>INFP</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(18)>INFJ</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(19)>INTP</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(20)>INTJ</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(21)>ISFP</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(22)>ISFJ</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(23)>ISTP</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(24)>ISTJ</a></li>
-                
-                        </ul>
+<header></header>
+<div class="container">
+    <div class="row">
+        <div class="wrap">
+            <div class = category_box>
+                <div class="dropdown">
+                    <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        mbti 게시글 보기
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" onclick = save_category_id(0)>전체보기</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(9)>ENFP</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(10)>ENFJ</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(11)>ENTP</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(12)>ENTJ</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(13)>ESFP</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(14)>ESFJ</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(15)>ESTP</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(16)>ESTJ</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(17)>INFP</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(18)>INFJ</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(19)>INTP</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(20)>INTJ</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(21)>ISFP</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(22)>ISFJ</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(23)>ISTP</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(24)>ISTJ</a></li>
+            
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        카테고리 별 게시글 보기
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" onclick = save_category_id(0)>전체보기</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(1)>음식</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(2)>취미</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(3)>취업</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(4)>일상</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(5)>투자</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(6)>연애</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(7)>스포츠</a></li>
+                    <li><a class="dropdown-item" onclick = save_category_id(8)>연예</a></li>
+                    </ul>
+                </div>
+                </div>
+            <div class='left_box'>
+                <h2>AI BeeSolution</h2>
+                <h4>MBTI</h4>
+                <div class="form_div">
+                    <select class="form-select" id = 'input_mbti'>
+                        <option selected>-- mbti를 골라주세요 -- </option>
+                        <option value="1">ENFP</option>
+                        <option value="2">ENFJ</option>
+                        <option value="3">ENTP</option>
+                        <option value="4">ENTJ</option>
+                        <option value="5">ESFP</option>
+                        <option value="6">ESFJ</option>
+                        <option value="7">ESTP</option>
+                        <option value="8">ESTJ</option>
+                        <option value="9">INFP</option>
+                        <option value="10">INFJ</option>
+                        <option value="11">INTP</option>
+                        <option value="12">INTJ</option>
+                        <option value="13">ISFP</option>
+                        <option value="14">ISFJ</option>
+                        <option value="15">ISTP</option>
+                        <option value="16">ISTJ</option>
+                    </select>
+                </div>
+                <h4>Category</h4>
+                <div class="form_div">
+                    <select class="form-select" id = 'input_category'>
+                        <option selected>-- 카테고리를 골라주세요 -- </option>
+                        <option value="1">음식</option>
+                        <option value="2">취미</option>
+                        <option value="3">취업</option>
+                        <option value="4">일상</option>
+                        <option value="5">투자</option>
+                        <option value="6">연애</option>
+                        <option value="7">스포츠</option>
+                        <option value="8">연예</option>
+                    </select>
+                </div>
+                <div class="form_div">
+                    <h4>고민 내용</h4>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="input_worry" placeholder="고민을 입력해주세요">
+                        <label for="floatingInput">고민을 입력해주세요</label>
                     </div>
-                    <div class="dropdown">
-                        <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            카테고리 별 게시글 보기
-                        </button>
-                        <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" onclick = save_category_id(0)>전체보기</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(1)>음식</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(2)>취미</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(3)>취업</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(4)>일상</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(5)>투자</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(6)>연애</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(7)>스포츠</a></li>
-                        <li><a class="dropdown-item" onclick = save_category_id(8)>연예</a></li>
-                        </ul>
-                    </div>
-                    </div>
-                <div class='left_box'>
-                    <h2>AI BeeSolution</h2>
-                    <h4>MBTI</h4>
-                    <div class="form_div">
-                        <select class="form-select" id = 'input_mbti'>
-                            <option selected>-- mbti를 골라주세요 -- </option>
-                            <option value="1">ENFP</option>
-                            <option value="2">ENFJ</option>
-                            <option value="3">ENTP</option>
-                            <option value="4">ENTJ</option>
-                            <option value="5">ESFP</option>
-                            <option value="6">ESFJ</option>
-                            <option value="7">ESTP</option>
-                            <option value="8">ESTJ</option>
-                            <option value="9">INFP</option>
-                            <option value="10">INFJ</option>
-                            <option value="11">INTP</option>
-                            <option value="12">INTJ</option>
-                            <option value="13">ISFP</option>
-                            <option value="14">ISFJ</option>
-                            <option value="15">ISTP</option>
-                            <option value="16">ISTJ</option>
-                        </select>
-                    </div>
-                    <h4>Category</h4>
-                    <div class="form_div">
-                        <select class="form-select" id = 'input_category'>
-                            <option selected>-- 카테고리를 골라주세요 -- </option>
-                            <option value="1">음식</option>
-                            <option value="2">취미</option>
-                            <option value="3">취업</option>
-                            <option value="4">일상</option>
-                            <option value="5">투자</option>
-                            <option value="6">연애</option>
-                            <option value="7">스포츠</option>
-                            <option value="8">연예</option>
-                        </select>
-                    </div>
-                    <div class="form_div">
-                        <h4>고민 내용</h4>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="input_worry" placeholder="고민을 입력해주세요">
-                            <label for="floatingInput">고민을 입력해주세요</label>
-                        </div>
-                    </div>
-                    <div class="button_div">
-                        <button type="button" class="btn btn-warning btn-outline-dark" onclick=create_worry()>AI bee의 고민 분석</button>
-                        <button type="button" class="btn btn-warning btn-outline-dark" onclick="location.href='solution_collection.html'">명언집 보러가기</button>
-                    </div>
+                </div>
+                <div class="button_div">
+                    <button type="button" class="btn btn-warning btn-outline-dark" onclick=create_worry()>AI bee의 고민 분석</button>
+                    <button type="button" class="btn btn-warning btn-outline-dark" onclick="location.href='solution_collection.html'">명언집 보러가기</button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="/js/main.js"></script>
+</div>
+<script src="/js/main.js"></script>
 </body>
 </html>

@@ -209,3 +209,11 @@ function handleLogout(){
 function save_comment_id(comment_id){
     localStorage.setItem('comment_id',comment_id)    
 }
+
+
+fetch("./navbar.html").then(response=>{
+    return response.text()
+})
+.then(data =>{
+    document.querySelector("header").innerHTML = data
+})

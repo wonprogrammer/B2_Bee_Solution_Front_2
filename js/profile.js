@@ -222,3 +222,10 @@ async function deleteuser(){
     localStorage.clear()
     window.location.replace("api.html")
 }
+
+fetch("./navbar.html").then(response=>{
+    return response.text()
+})
+.then(data =>{
+    document.querySelector("header").innerHTML = data
+})
