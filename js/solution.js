@@ -87,3 +87,8 @@ fetch("./navbar.html").then(response=>{
 .then(data =>{
     document.querySelector("header").innerHTML = data
 })
+
+function save_category_id(category_id){
+    localStorage.setItem('category_id',category_id)
+    window.location.replace("articles.html")
+}

@@ -2,8 +2,53 @@
     <nav class="navbar">
         <a href="main.html"><img src="profile_default.jpg" style="width:130px; height:85px;"><br> beesolution</a>
         <ul class="navbar__menu">
-            <button class="custom-btn btn-5" onclick="location.href='create_solution.html'">soultion</button>
-            <button class="custom-btn btn-5" onclick="save_category_id(0)">category</button>
+            <div class="btn-group" role="group">
+                <button class="custom-btn btn-5 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" >soultion</button>
+                <ul class="dropdown-menu " role="menu">
+                    <li><a class="dropdown-item" onclick="location.href='create_solution.html'">make solution</a></li>
+                    <li><a class="dropdown-item" onclick="location.href='solution_collection.html'">명언집 보러가기</a></li>
+                </ul>
+            </div>
+            <div class="btn-group" role="group">
+                <button class="custom-btn btn-5 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">category</button>
+                <ul class="dropdown-menu " role="menu" id = 'category_menu'>
+                    <li><a class="dropdown-item" onclick = save_category_id(0)>전체보기</a></li>
+                    <div id="mbti_btn">
+                    <li><a class="dropdown-item" >MBTI</a></li>
+                    <div id="mbti_btn2">                       
+                        <a class="dropdown-item" onclick = save_category_id(9)>ENFP</a>
+                        <a class="dropdown-item" onclick = save_category_id(10)>ENFJ</a>
+                        <a class="dropdown-item" onclick = save_category_id(11)>ENTP</a>
+                        <a class="dropdown-item" onclick = save_category_id(12)>ENTJ</a>
+                        <a class="dropdown-item" onclick = save_category_id(13)>ESFP</a>
+                        <a class="dropdown-item" onclick = save_category_id(14)>ESFJ</a>
+                        <a class="dropdown-item" onclick = save_category_id(15)>ESTP</a>
+                        <a class="dropdown-item" onclick = save_category_id(16)>ESTJ</a>
+                        <a class="dropdown-item" onclick = save_category_id(17)>INFP</a>
+                        <a class="dropdown-item" onclick = save_category_id(18)>INFJ</a>
+                        <a class="dropdown-item" onclick = save_category_id(19)>INTP</a>
+                        <a class="dropdown-item" onclick = save_category_id(20)>INTJ</a>
+                        <a class="dropdown-item" onclick = save_category_id(21)>ISFP</a>
+                        <a class="dropdown-item" onclick = save_category_id(22)>ISFJ</a>
+                        <a class="dropdown-item" onclick = save_category_id(23)>ISTP</a>
+                        <a class="dropdown-item" onclick = save_category_id(24)>ISTJ</a>
+                    </div> 
+                    </div>  
+                    <div id="mbti_btn">
+                    <li><a class="dropdown-item" id="category_btn">category</a></li>
+                    <div id="mbti_btn2">  
+                        <a class="dropdown-item" onclick = save_category_id(1)>음식</a>
+                        <a class="dropdown-item" onclick = save_category_id(2)>취미</a>
+                        <a class="dropdown-item" onclick = save_category_id(3)>취업</a>
+                        <a class="dropdown-item" onclick = save_category_id(4)>일상</a>
+                        <a class="dropdown-item" onclick = save_category_id(5)>투자</a>
+                        <a class="dropdown-item" onclick = save_category_id(6)>연애</a>
+                        <a class="dropdown-item" onclick = save_category_id(7)>스포츠</a>
+                        <a class="dropdown-item" onclick = save_category_id(8)>연예</a>
+                    </div>
+                    </div>
+                </ul>
+            </div>
             <button class="custom-btn btn-5" onclick="location.href='main.html'">worry</button>
             <button class="custom-btn btn-5" onclick="location.href='profile.html'">profile</button>
             <button class="custom-btn btn-5" onclick="handleLogout()">logout</button>

@@ -186,9 +186,8 @@ function save_article_id(article_id){
 
 function save_category_id(category_id){
     localStorage.setItem('category_id',category_id)
-    window.location.reload()
+    window.location.replace("articles.html")
 }
-
 
 // user 삭제
 async function deleteuser(){
