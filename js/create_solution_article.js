@@ -63,5 +63,5 @@ async function handleUploadimg(){
         },
         method: 'POST',
         body: formdata
-    }).then(window.location.replace('solution_detail.html'))
+    }).then(window.location.href = 'solution_detail.html')
 }
