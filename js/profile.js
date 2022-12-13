@@ -189,6 +189,11 @@ function save_category_id(category_id){
     window.location.replace("articles.html")
 }
 
+function save_category_id_profile(category_id){
+    localStorage.setItem('category_id',category_id)
+    window.location.reload()
+}
+
 // user 삭제
 async function deleteuser(){
     var result = confirm("확인 버튼을 누르는 즉시 회원 탈퇴되며, 되돌릴 수 없습니다");
