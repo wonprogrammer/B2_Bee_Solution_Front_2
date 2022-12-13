@@ -265,6 +265,10 @@ function save_comment_id(comment_id){
     localStorage.setItem('comment_id',comment_id)    
 }
 
+function save_category_id(category_id){
+    localStorage.setItem('category_id',category_id)
+    window.location.replace("articles.html")
+}
 
 fetch("./navbar.html").then(response=>{
     return response.text()
