@@ -190,7 +190,7 @@ function save_category_id(category_id){
 }
 
 
-// username 삭제
+// user 삭제
 async function deleteuser(){
     var result = confirm("확인 버튼을 누르는 즉시 회원 탈퇴되며, 되돌릴 수 없습니다");
         if(result){
@@ -209,3 +209,10 @@ async function deleteuser(){
             alert("탈퇴 취소");
         }
 }
+
+fetch("./navbar.html").then(response=>{
+    return response.text()
+})
+.then(data =>{
+    document.querySelector("header").innerHTML = data
+})

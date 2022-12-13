@@ -200,10 +200,23 @@ button {
 }
 
 #comment_list{
-    width: 400px;
+    width: 370px;
 }
 #comment_list>button{
     float: right;
+}
+
+.comment_like{
+    display: flex;
+    flex-direction: row;
+}
+.like_btn{
+    border: 0;
+    background-color: transparent;
+}
+
+.btn_box{
+    margin-left: 200px;
 }
 
 #pagination_box{

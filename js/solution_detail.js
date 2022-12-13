@@ -94,3 +94,10 @@ async function rating(solution_id, value){
 
     alert('평가완료')
 }
+
+fetch("./navbar.html").then(response=>{
+    return response.text()
+})
+.then(data =>{
+    document.querySelector("header").innerHTML = data
+})

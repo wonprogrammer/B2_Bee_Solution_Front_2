@@ -15,44 +15,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="basetool">
-            <nav class="navbar">
-                <a href="main.html">Beesolution</a>
-                <ul class="navbar__menu">
-                    <button class="custom-btn btn-5" onclick="location.href='create_solution.html'">soultion</button>
-                    <button class="custom-btn btn-5" onclick="location.href='articles.html'">category</button>
-                    <button class="custom-btn btn-5" onclick="location.href='main.html'">worry</button>
-                    <button class="custom-btn btn-5" onclick="location.href='profile.html'">Profile</button>
-                    <button class="custom-btn btn-5" onclick="handleLogout()">Logout</button>
-                </ul>
-            </nav>
-        </div>
-        <div class="row">
-            <div class="wrap">
-                <div class="solution_box">
-                    <h2>Bee solution 의 고민 해결</h2>
-                    <div id="roadingStatus" style="display: none;">
-                        <span>Bee Solution AI가 고민을 분석 중입니다.</span>
-                        <br><br><br>
-                        <div class="spinner-border text-dark" role="status" >
-                            <span class="sr-only"></span>
-                        </div>
+<header></header>
+<div class="container">
+    <div class="row">
+        <div class="wrap">
+            <div class="solution_box">
+                <h2>Bee solution 의 고민 해결</h2>
+                <div id="roadingStatus" style="display: none;">
+                    <span>Bee Solution AI가 고민을 분석 중입니다.</span>
+                    <br><br><br>
+                    <div class="spinner-border text-dark" role="status" >
+                        <span class="sr-only"></span>
                     </div>
-                    <div id="solution">
-                    </div>
-                        <span>솔루션 평가를 매겨주세요</span>
-                    <div class="rating_btns">
-                        <button type="button" class="btn btn-warning btn-outline-dark" id = 'best_btn' value="best">좋아요</button>
-                        <button type="button" class="btn btn-warning btn-outline-dark" id = 'soso_btn' value="soso">글쎄요</button>
-                        <button type="button" class="btn btn-warning btn-outline-dark" id = 'bad_btn' value="bad">안좋아요</button>
-                    </div>
-
-                    <button type="button" class="btn btn-warning btn-outline-dark"onclick="window.location.replace('main.html')">확인</button>
                 </div>
+                <div id="solution">
+                </div>
+                    <span>솔루션 평가를 매겨주세요</span>
+                <div class="rating_btns">
+                    <button type="button" class="btn btn-warning btn-outline-dark" id = 'best_btn' value="best">좋아요</button>
+                    <button type="button" class="btn btn-warning btn-outline-dark" id = 'soso_btn' value="soso">글쎄요</button>
+                    <button type="button" class="btn btn-warning btn-outline-dark" id = 'bad_btn' value="bad">안좋아요</button>
+                </div>
+
+                <button type="button" class="btn btn-warning btn-outline-dark"onclick="window.location.replace('main.html')">확인</button>
             </div>
         </div>
     </div>
-    <script src="/js/solution.js"></script>
+</div>
+<script src="/js/solution.js"></script>
 </body>
 </html>

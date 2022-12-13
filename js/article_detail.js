@@ -103,19 +103,64 @@ async function load_comments(){
     
   
     const comment_list = document.getElementById('comment_list')
+
     let output = ''
+
+    let like = 'https://cdn-icons-png.flaticon.com/512/1067/1067447.png'
+    let dislike = 'https://cdn-icons-png.flaticon.com/512/1067/1067346.png'
+
     response_json.results.reverse().forEach(element => {
         if(userId !=element.user){
-            output +=`<input class="form-control" type="text" value="${element.content}" readonly>
-            <br>`
+            if (element.likes.includes(userId)){
+
+                output +=`
+                <div class = 'comment_like'>
+                <input class="form-control" type="text" value="${element.content}" readonly>
+                <button type = 'button' class='like_btn' onclick=comment_like(${element.id})>
+                <img style = 'width:25px;' src='${like}'>${element.like_count}</button>
+                </div>
+                <br>`
+            }
+            else {
+                output +=`
+                <div class = 'comment_like'>
+                <input class="form-control" type="text" value="${element.content}" readonly>
+                <button type = 'button' class='like_btn' onclick=comment_like(${element.id})>
+                <img style = 'width:25px;' src='${dislike}'>${element.like_count}</button>
+                </div>
+                <br>`
+            }
         } else {
+            if (element.likes.includes(userId)){
             output += `
+            <div class = 'comment_like'>
             <input class="form-control" type="text" value="${element.content}" readonly>
+            <button type = 'button' class='like_btn' onclick=comment_like(${element.id})>
+            <img style = 'width:25px;' src='${like}'>${element.like_count}</button>
+            </div>
+            <div class='btn_box'>
             <button type="button" class="btn btn-outline-dark" id="edit_comment_btn" onclick=save_comment_id(${element.id}) data-bs-toggle="modal" data-bs-target="#comment_edit_modal">
             <img style = 'width:20px;' src='https://cdn-icons-png.flaticon.com/512/1250/1250615.png'></button>
             <button type="button" class="btn btn-outline-dark" id="edit_delete" onclick=comment_delete(${element.id})>
             <img style = 'width:20px'; src='https://cdn-icons-png.flaticon.com/512/2907/2907762.png'></button>
+            </div>
             `       
+            }
+            else{
+                output += `
+            <div class = 'comment_like'>
+            <input class="form-control" type="text" value="${element.content}" readonly>
+            <button type = 'button' class='like_btn' onclick=comment_like(${element.id})>
+            <img style = 'width:25px;' src='${dislike}'>${element.like_count}</button>
+            </div>
+            <div class='btn_box'>
+            <button type="button" class="btn btn-outline-dark" id="edit_comment_btn" onclick=save_comment_id(${element.id}) data-bs-toggle="modal" data-bs-target="#comment_edit_modal">
+            <img style = 'width:20px;' src='https://cdn-icons-png.flaticon.com/512/1250/1250615.png'></button>
+            <button type="button" class="btn btn-outline-dark" id="edit_delete" onclick=comment_delete(${element.id})>
+            <img style = 'width:20px'; src='https://cdn-icons-png.flaticon.com/512/2907/2907762.png'></button>
+            </div>
+            `       
+            }
     }
     })
     comment_list.innerHTML = output
@@ -201,6 +246,16 @@ function comment_edit(){
     window.location.replace('article_detail.html')
 }
 
+async function comment_like(comment_id){
+    const response = await fetch(`${main_url}/article/${article_id}/comment/${comment_id}/likes/`, {
+        headers : {
+            "Authorization": "Bearer " + localStorage.getItem("access")
+        },
+        method : "POST"
+    })
+    window.location.reload()
+}
+
 function handleLogout(){
     localStorage.clear()
     window.location.replace("api.html")
@@ -209,3 +264,11 @@ function handleLogout(){
 function save_comment_id(comment_id){
     localStorage.setItem('comment_id',comment_id)    
 }
+
+
+fetch("./navbar.html").then(response=>{
+    return response.text()
+})
+.then(data =>{
+    document.querySelector("header").innerHTML = data
+})
