@@ -141,3 +141,13 @@ function handleLogout(){
     localStorage.clear()
     window.location.replace("api.html")
 }
+
+async function handleKakaoSignin(){
+    Kakao.init('40ff260d348d97f586de1e3a150a7bcb');
+    
+    Kakao.Auth.authorize({
+        redirectUri: 'http://127.0.0.1:5500/kakao.html',
+        prompts: 'login',
+        });
+
+}
