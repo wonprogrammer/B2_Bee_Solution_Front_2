@@ -198,7 +198,7 @@ function save_category_id_profile(category_id){
 async function deleteuser(){
     var result = confirm("확인 버튼을 누르는 즉시 회원 탈퇴되며, 되돌릴 수 없습니다");
         if(result){
-            alert("탈퇴 완료! 이용해주셔서 감사합니다.");
+            alert("회원 탈퇴 완료! 이용해주셔서 감사합니다.");
             const response = await fetch(`${main_url}/users/${userId}/profile/`, {
                 headers: { 
                     'Authorization': 'Bearer '+ localStorage.getItem('access'),
@@ -210,7 +210,7 @@ async function deleteuser(){
             localStorage.clear()
             window.location.replace("api.html")
         }else{
-            alert("탈퇴 취소");
+            alert("회원 탈퇴 취소");
         }
 }
 
