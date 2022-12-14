@@ -79,3 +79,16 @@ async function rating(solution_id, value){
     })
     window.location.replace('main.html')
 }
+
+
+fetch("./navbar.html").then(response=>{
+    return response.text()
+})
+.then(data =>{
+    document.querySelector("header").innerHTML = data
+})
+
+function save_category_id(category_id){
+    localStorage.setItem('category_id',category_id)
+    window.location.replace("articles.html")
+}

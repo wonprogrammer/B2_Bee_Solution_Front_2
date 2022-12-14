@@ -46,9 +46,9 @@ async function handleSignup(){
     
     var username = document.getElementById("username").value
     var password = document.getElementById("password").value
-    var password1 = document.getElementById("password1").value
+    var password2 = document.getElementById("password1").value
 
-    if (password_valid(password, password1)) {
+    if (password_valid(password, password2)) {
         const response = await fetch(`${main_url}/users/signup/`, {
             headers:{
                 'content-type' : 'application/json',
@@ -57,23 +57,26 @@ async function handleSignup(){
             body: JSON.stringify({
                 "username":username,
                 "password":password,
-                "password1":password1,
+                "password2":password2,
             })
         })
+
         if (response.status == 400){
             response_json = await response.json()
-            let addHtml = response_json.message;
-            document.getElementById('signup_message').innerHTML = addHtml;
-            setTimeout(() => {
-                document.getElementById('signup_message').remove()
-            }, 2000)
+            if (response_json.username){
+                alert(response_json.username)
+            }
+            else {
+                alert(response_json.non_field_errors)
+            }
+
             var username = document.getElementById("username")
             var password = document.getElementById("password")
-            var password1 = document.getElementById("password1")
+            var password2 = document.getElementById("password1")
         
             username.value = null;
             password.value = null;
-            password1.value = null;
+            password2.value = null;
         }
         else{
             window.location.replace("api.html")
@@ -81,7 +84,6 @@ async function handleSignup(){
         
     }
     else {
-        alert('다시 시도해주세요')
         window.location.reload()
     }
 }

@@ -66,3 +66,8 @@ async function skip(){
     })
     window.location.replace('main.html')
 }
+
+function save_category_id(category_id){
+    localStorage.setItem('category_id',category_id)
+    window.location.replace("articles.html")
+}

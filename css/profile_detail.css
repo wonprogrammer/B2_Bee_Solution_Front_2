@@ -1,3 +1,7 @@
+*{
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+}
 /* navbar css */
 .navbar {
     display: flex;
@@ -43,8 +47,24 @@
 }
 
 .navbar__menu :hover {
-    background: #F5D10D;
     border-radius: 4px;
+}
+
+#category_menu {
+    height: 250px;
+    width: 200px;
+    overflow-y: scroll;
+}
+
+#mbti_btn2 {
+    margin-left: 30px;
+    display: none;
+    background-color: rgb(247, 247, 208);
+    width: 100px;
+}
+
+#mbti_btn:hover #mbti_btn2 {
+    display: block;
 }
 
 @media screen and (max-width: 935px) {
@@ -228,7 +248,7 @@ button {
 
 .deleteusertext{
     margin-top: 60px;
-    margin-left: 55px;
+    margin-left: 110px;
 }
 
 .profile_finish>button{
@@ -240,4 +260,9 @@ button {
 .profile_finish>button:hover {
     background-color: #F5D10D;
     color: black;
+}
+
+.changepassword{
+    margin-top: 60px;
+    margin-left: 220px;
 }

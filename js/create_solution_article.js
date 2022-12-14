@@ -63,5 +63,17 @@ async function handleUploadimg(){
         },
         method: 'POST',
         body: formdata
-    }).then(window.location.replace('solution_detail.html'))
+    }).then(window.location.href = 'solution_detail.html')
+}
+
+fetch("./navbar.html").then(response=>{
+    return response.text()
+})
+.then(data =>{
+    document.querySelector("header").innerHTML = data
+})
+
+function save_category_id(category_id){
+    localStorage.setItem('category_id',category_id)
+    window.location.replace("articles.html")
 }

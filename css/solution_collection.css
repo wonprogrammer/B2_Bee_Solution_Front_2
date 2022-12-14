@@ -1,3 +1,7 @@
+*{
+  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+}
 /* navbar css */
 .navbar {
   display: flex;
@@ -10,7 +14,6 @@
   right: 0;
   top: 0;
   z-index: 15;
-  background-color: #fff;
 }
 
 .navbar>a{
@@ -44,10 +47,25 @@
 }
 
 .navbar__menu :hover {
-  background: #F5D10D;
   border-radius: 4px;
 }
 
+#category_menu {
+  height: 250px;
+  width: 200px;
+  overflow-y: scroll;
+}
+
+#mbti_btn2 {
+  margin-left: 30px;
+  display: none;
+  background-color: rgb(247, 247, 208);
+  width: 100px;
+}
+
+#mbti_btn:hover #mbti_btn2 {
+  display: block;
+}
 @media screen and (max-width: 935px) {
   .navbar {
       flex-direction: column;
@@ -84,68 +102,69 @@
 }
 
 button {
-    margin: 5px;
-  }
-  .custom-btn {
-    width: 130px;
-    height: 40px;
-    color: black;
-    border-radius: 5px;
-    padding: 10px 25px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-     7px 7px 20px 0px rgba(0,0,0,.1),
-     4px 4px 5px 0px rgba(0,0,0,.1);
-    outline: none;
-    font-family: 'Ubuntu', sans-serif;
+  margin: 5px;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: black;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  font-family: 'Ubuntu', sans-serif;
+
 }
 
 .btn-5 {
-    width: 130px;
-    height: 40px;
-    line-height: 42px;
-    padding: 0;
-    border: none;
-    background: #F5D10D;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
   background: #F5D10D;
+background: #F5D10D;
 }
 .btn-5:hover {
-    color: #F5D10D;
-    background: transparent;
-     box-shadow:none;
-  }
-  .btn-5:before,
-  .btn-5:after{
-    content:'';
-    position:absolute;
-    top:0;
-    right:0;
-    height:2px;
-    width:0;
-    background: #F5D10D;
-    box-shadow:
-    -1px -1px 5px 0px #fff,
-     7px 7px 20px 0px #0003,
-     4px 4px 5px 0px #0002;
-    transition:400ms ease all;
-  }
-  .btn-5:after{
-    right:inherit;
-    top:inherit;
-    left:0;
-    bottom:0;
-  }
-  .btn-5:hover:before,
-  .btn-5:hover:after{
-    width:100%;
-    transition:800ms ease all;
-  }
+  color: #F5D10D;
+  background: transparent;
+   box-shadow:none;
+}
+.btn-5:before,
+.btn-5:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #F5D10D;
+  box-shadow:
+  -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.btn-5:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-5:hover:before,
+.btn-5:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
 
 
 
@@ -160,22 +179,10 @@ button {
   /* background-color: #18160a; */
 }
 
-li {
-    float:left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
   #img_box {
       
       width: 1200px;
-      margin : 100px auto;
+      margin : 150px auto;
       display: flex;
       align-items: center;
       justify-content: center;

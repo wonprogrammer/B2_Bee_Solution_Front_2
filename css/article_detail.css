@@ -47,8 +47,24 @@
 }
 
 .navbar__menu :hover {
-    background: #F5D10D;
     border-radius: 4px;
+}
+
+#category_menu {
+    height: 250px;
+    width: 200px;
+    overflow-y: scroll;
+}
+
+#mbti_btn2 {
+    margin-left: 30px;
+    display: none;
+    background-color: rgb(247, 247, 208);
+    width: 100px;
+}
+
+#mbti_btn:hover #mbti_btn2 {
+    display: block;
 }
 
 @media screen and (max-width: 935px) {
@@ -200,10 +216,23 @@ button {
 }
 
 #comment_list{
-    width: 400px;
+    width: 370px;
 }
 #comment_list>button{
     float: right;
+}
+
+.comment_like{
+    display: flex;
+    flex-direction: row;
+}
+.like_btn{
+    border: 0;
+    background-color: transparent;
+}
+
+.btn_box{
+    margin-left: 200px;
 }
 
 #pagination_box{

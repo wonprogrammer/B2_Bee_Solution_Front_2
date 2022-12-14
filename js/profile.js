@@ -70,7 +70,7 @@ async function userProfileUpload(){
 
 async function get_articles(page_param){
     if (page_param == ''){
-    const response = await fetch(`${main_url}/article/${category_id}/`,{
+    const response = await fetch(`${main_url}/article/${category_id}/profile/`,{
         headers : {
             "Authorization": "Bearer " + localStorage.getItem("access"),
             "content-type": "application/json"
@@ -78,20 +78,11 @@ async function get_articles(page_param){
         method : 'GET',
     })
     response_json = await response.json()
-   
-
-    var my_articles = new Array
-    response_json.results.forEach(element => {
-        if (element.user == userId){
-            my_articles.push(element)
-        }
-    })
-    
-    return my_articles
+    return response_json
 
 } else {
     page = page_param.split('=')[1]
-    const response = await fetch(`${main_url}/article/${category_id}/?page=${page}`,{
+    const response = await fetch(`${main_url}/article/${category_id}/profile/?page=${page}`,{
         headers : {
             "Authorization": "Bearer " + localStorage.getItem("access"),
             "content-type": "application/json"
@@ -99,27 +90,19 @@ async function get_articles(page_param){
         method : 'GET',
     })
     response_json = await response.json()
-    console.log( response_json)}
-
-    var my_articles = new Array
-    response_json.results.forEach(element => {
-        if (element.user == userId){
-            my_articles.push(element)
-        }
-    })
-    
-    return my_articles
+    console.log(response_json)}
+    return response_json
 }
 
 async function load_articles(){
     page_param = location.search
     var page = parseInt(page_param.split('=')[1])
 
-    my_articles = await get_articles(page_param)
-    console.log(my_articles)
+    response_json = await get_articles(page_param)
+    console.log(response_json)
 
     // ************ pagination ********************
-    let total_articles = my_articles.count //총 게시글 수
+    let total_articles = response_json.count //총 게시글 수
     let page_count = Math.ceil(total_articles / 3) //  let
     
     if(page_param == ""){
@@ -153,18 +136,18 @@ async function load_articles(){
     if (page_count >= 5) {
         for(let i=first_number; i<= last_number; i++ ){
            if(i == current_page){
-               page_btn += `<li class="page-item active" aria-current="page"><a class="page-link"href="href="profile.html?page=${i}">${i}</a></li>`
+               page_btn += `<li class="page-item active my-active" aria-current="page"><a class="page-link"href="profile.html?page=${i}">${i}</a></li>`
            } else {
        
-           page_btn += `<li class="page-item" ><a class="page-link" href="href="profile.html?page=${i}">${i}</a></li>`}
+           page_btn += `<li class="page-item" ><a class="page-link" href="profile.html?page=${i}">${i}</a></li>`}
        
        }} else {
            for (let i = 1; i <= page_count; i++){
                if(i == current_page){
-                   page_btn += `<li class="page-item active" aria-current="page"><a class="page-link"href="href="profile.html?page=${i}">${i}</a></li>`
+                   page_btn += `<li class="page-item active" aria-current="page"><a class="page-link"href="profile.html?page=${i}">${i}</a></li>`
                } else {
            
-               page_btn += `<li class="page-item" ><a class="page-link" href="href="profile.html?page=${i}">${i}</a></li>`
+               page_btn += `<li class="page-item" ><a class="page-link" href="profile.html?page=${i}">${i}</a></li>`
            }
        }}
     
@@ -180,14 +163,14 @@ async function load_articles(){
 
     let articles_box = document.getElementById('articles')
     let output = ''
-    my_articles.forEach(element=>{
+    response_json.results.forEach(element=>{
         
         output += `
-        <div class="card text-center" style="width: 30rem; margin-top: 10px;">
+        <div class="card text-center" >
             <div class="card-body">
                 <h5 class="card-title">${element.category} / ${element.mbti}</h5>
                 <p class="card-text">${element.content}</p>
-                <a href="javascript:save_article_id(${element.id});" class="btn btn-outline-secondary">게시글 보기</a>
+                <a href="javascript:save_article_id(${element.id});" class="btn btn-warning btn-outline-dark">게시글 보기</a>
             </div>
         </div>
         `    
@@ -203,22 +186,69 @@ function save_article_id(article_id){
 
 function save_category_id(category_id){
     localStorage.setItem('category_id',category_id)
+    window.location.replace("articles.html")
+}
+
+function save_category_id_profile(category_id){
+    localStorage.setItem('category_id',category_id)
     window.location.reload()
 }
 
-
-// username 삭제
+// user 삭제
 async function deleteuser(){
-    alert("탈퇴완료")
-
-    const response = await fetch(`${main_url}/users/${userId}/profile/`, {
-        headers: { 
-            'Authorization': 'Bearer '+ localStorage.getItem('access'),
-            "content-type": "application/json"
-        },
-        method: "DELETE",
-    }
-    )
-    localStorage.clear()
-    window.location.replace("api.html")
+    var result = confirm("확인 버튼을 누르는 즉시 회원 탈퇴되며, 되돌릴 수 없습니다");
+        if(result){
+            alert("회원 탈퇴 완료! 이용해주셔서 감사합니다.");
+            const response = await fetch(`${main_url}/users/${userId}/profile/`, {
+                headers: { 
+                    'Authorization': 'Bearer '+ localStorage.getItem('access'),
+                    "content-type": "application/json"
+                },
+                method: "DELETE",
+            }
+            )
+            localStorage.clear()
+            window.location.replace("api.html")
+        }else{
+            alert("회원 탈퇴 취소");
+        }
 }
+
+// 비밀번호 변경
+async function changepassword(){
+    var new_password1 = document.getElementById("new_password1").value
+    var new_password2 = document.getElementById("new_password2").value
+
+    if (new_password1 == new_password2){
+        var result = confirm("확인 버튼을 누르는 즉시 비밀번호가 변경됩니다.");
+        if(result){
+            alert("비밀번호 변경 완료! 바뀐 비밀번호로 다시 로그인 해주세요!");
+            const response = await fetch(`${main_url}/users/${userId}/profile/changepassword/`, {
+                headers: { 
+                    'Authorization': 'Bearer '+ localStorage.getItem('access'),
+                    "content-type": "application/json"
+                },
+                method: "PUT",
+                body: JSON.stringify({
+                    "password":new_password1,
+                })
+            }
+            )
+            localStorage.clear()
+            window.location.replace("api.html")
+        }else{
+            alert("비밀번호 변경 취소");
+        }
+
+    }else{
+        alert("입력하신 비밀번호가 일치하지 않습니다. 다시 시도해주세요.");
+    }
+}
+
+
+fetch("./navbar.html").then(response=>{
+    return response.text()
+})
+.then(data =>{
+    document.querySelector("header").innerHTML = data
+})
