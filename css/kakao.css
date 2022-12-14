@@ -1,0 +1,11 @@
+html, body{
+    height: 100%;
+}
+.wrap{
+    font-family: 'Ubuntu', sans-serif;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height:100%;
+}
