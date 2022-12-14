@@ -214,6 +214,38 @@ async function deleteuser(){
         }
 }
 
+// 비밀번호 변경
+async function changepassword(){
+    var new_password1 = document.getElementById("new_password1").value
+    var new_password2 = document.getElementById("new_password2").value
+
+    if (new_password1 == new_password2){
+        var result = confirm("확인 버튼을 누르는 즉시 비밀번호가 변경됩니다.");
+        if(result){
+            alert("비밀번호 변경 완료! 바뀐 비밀번호로 다시 로그인 해주세요!");
+            const response = await fetch(`${main_url}/users/${userId}/profile/changepassword/`, {
+                headers: { 
+                    'Authorization': 'Bearer '+ localStorage.getItem('access'),
+                    "content-type": "application/json"
+                },
+                method: "PUT",
+                body: JSON.stringify({
+                    "password":new_password1,
+                })
+            }
+            )
+            localStorage.clear()
+            window.location.replace("api.html")
+        }else{
+            alert("비밀번호 변경 취소");
+        }
+
+    }else{
+        alert("입력하신 비밀번호가 일치하지 않습니다. 다시 시도해주세요.");
+    }
+}
+
+
 fetch("./navbar.html").then(response=>{
     return response.text()
 })
