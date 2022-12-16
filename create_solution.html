@@ -51,6 +51,15 @@
                     <input type="text" class="form-control" id="nickname" placeholder="nickname" onkeyup='printnickname()'>
                     <label for="nickname">Nickname</label>
                 </div>
+                <div class="form-floating">
+                    이 명언은 어떤 고민에 어울릴까요?(중복선택가능)
+                    <div>
+                        <input type="checkbox" name="sol_category" value="1"> 1.일상<br>
+                        <input type="checkbox" name="sol_category" value="2"> 2.취미<br>
+                        <input type="checkbox" name="sol_category" value="3"> 3.취업<br>
+                        <input type="checkbox" name="sol_category" value="4"> 4.음식<br>
+                    </div>
+                </div>
                 <button type="button" class="btn btn-warning btn-outline-dark" onclick="handleUploadimg()">저장</button>
                 <button type="button" class="btn btn-warning btn-outline-dark" onclick="window.location.replace('solution_collection.html')">명언집 보러가기</button>
             </form>
