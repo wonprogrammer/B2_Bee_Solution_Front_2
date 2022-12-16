@@ -126,7 +126,7 @@
 }
 
 .left_box{  
-    margin:auto;
+    margin: 200px auto;
     position: relative;
     align-items: center;
     background-color: #F5D10D;
@@ -140,7 +140,7 @@
 @media ( max-width : 767px) {
         
     .left_box{  
-        margin:auto;
+        margin: 200px auto;
         position: relative;
         align-items: center;
         background-color: #F5D10D;
@@ -157,7 +157,7 @@
 @media ( min-width : 768px) {
         
     .left_box{  
-        margin:auto;
+        margin: 200px auto;
         position: relative;
         align-items: center;
         background-color: #F5D10D;
