@@ -50,12 +50,22 @@ async function handleUploadimg(){
     const wise = document.getElementById('wise').value
     const nickname = document.getElementById('nickname').value
 
-    console.log(img, wise, nickname)
+    
+    const checks = document.getElementsByName('sol_category').length
+    var cate_str = ''
 
+    for (var i=0; i<checks; i++){
+        if (document.getElementsByName('sol_category')[i].checked == true){
+            category_num = document.getElementsByName('sol_category')[i].value
+            cate_str = cate_str + String(category_num)
+        }
+    }
+    
     const formdata = new FormData()
     formdata.append('solution_image', img.files[0])
     formdata.append('wise', wise)
     formdata.append('nickname', nickname)
+    formdata.append('category', cate_str)
 
     const response = await fetch(`${main_url}/article/${article_id}/solution/`, {
         headers: { 
